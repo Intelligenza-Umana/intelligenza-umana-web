@@ -3,7 +3,7 @@
 Creare la bozza statica del sito di Intelligenza Umana («Sito in costruzione») e applicare il bootstrap della Project Lifecycle Skill.
 
 ## Stato verificato
-Pagina Angular 22 con logo, favicon e messaggio di costruzione. Build di produzione e rendering a 1280 e 390 px verificati localmente (nessun errore in console, nessuno scroll orizzontale). Branch `ccr-a50fc034-hsgjg6`, PR draft #1.
+Pagina Angular 22 con logo, favicon e messaggio di costruzione. Build di produzione e rendering a 1280 e 390 px verificati localmente (nessun errore in console, nessuno scroll orizzontale). Branch `ccr-a50fc034-hsgjg6`, PR draft #1. Deploy Vercel eseguito il 2026-11-25 dalla branch (commit `42d5238`): progetto `intelligenza-umana-web`, team javametalcoders-projects, stato Ready, https://intelligenza-umana-web.vercel.app risponde 200 con titolo, favicon e logo.
 
 ## Completato e file modificati
 App in `src/` e `public/`; README; AGENTS.md, CLAUDE.md, HANDOFF.md, `docs/DOCUMENTATION_MAP.md`, `docs/DEFINITION_OF_DONE.md`.
@@ -15,10 +15,10 @@ Nessun test automatico scritto. Favicon a 16 px non controllato nel browser. Bui
 Colori e font non sono scelte di brand definitive: avorio/carbone campionati dal logo, font di sistema. Link Instagram omesso perché l'handle non è verificato direttamente. Template ARCHITECTURE, ROADMAP, TASKS, VISION, DECISIONS non creati: per una pagina sola sarebbero placeholder.
 
 ## Blocchi e rischi
-Deploy su Vercel e dominio non effettuati (da autorizzare). Asset logo raster preliminari, fondo non trasparente.
+Dominio personalizzato non collegato. Il deploy è dalla branch di sessione: `main` contiene ancora solo il README iniziale, quindi i push su `main` non pubblicheranno la pagina finché la PR non è unita. Asset logo raster preliminari, fondo non trasparente.
 
 ## Prossimo passo
-Collegare il repository a Vercel e il dominio; poi definire struttura e contenuti del sito (archivio articoli, fonti, newsletter: vedi `studio/` della madre).
+Unire la PR #1, collegare il dominio su Vercel; poi definire struttura e contenuti del sito (archivio articoli, fonti, newsletter: vedi `studio/` della madre).
 
 ## Integrità documentale
-Aggiornati: README, AGENTS, CLAUDE, HANDOFF, mappa, Definition of Done. Verificati invariati: configurazione Angular, asset. Discrepanze: nessuna nota. Verifiche mancanti: test automatici, favicon 16 px, deploy.
+Aggiornati: README, AGENTS, CLAUDE, HANDOFF, mappa, Definition of Done. Verificati invariati: configurazione Angular, asset. Discrepanze: nessuna nota. Verifiche mancanti: test automatici, favicon 16 px nel browser, dominio.
