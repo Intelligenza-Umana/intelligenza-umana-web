@@ -1,0 +1,25 @@
+/* Palette campionata dal logo 02 (avorio e carbone); nessun colore definitivo di brand ancora definito. */
+:root {
+  --iu-ivory: #fdf8f0;
+  --iu-charcoal: #131312;
+  --iu-muted: #55534e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--iu-ivory);
+  color: var(--iu-charcoal);
+  font-family:
+    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
