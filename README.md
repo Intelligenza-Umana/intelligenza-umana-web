@@ -22,4 +22,5 @@ Colori avorio `#fdf8f0` e carbone `#131312` campionati dal logo, non ancora colo
 ## Deploy su Vercel
 Framework preset Angular (rilevato automaticamente), build `npm run build`, output `dist/intelligenza-umana-web/browser`.
 
-Governance e documentazione: repository madre.
+## Documentazione e governance
+Istruzioni agenti: [AGENTS.md](AGENTS.md). Stato: [HANDOFF.md](HANDOFF.md). Mappa: [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md). Chiusura: [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md). Governance, identità e registro: repository madre [intelligenza-umana](https://github.com/fabiozagaria/intelligenza-umana).
