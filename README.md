@@ -26,3 +26,6 @@ Vercel project `intelligenza-umana-web` is connected to this repository. Framewo
 
 ## Documentation and governance
 Instructions: [AGENTS.md](AGENTS.md). State: [HANDOFF.md](HANDOFF.md). Documentation map: [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md). Governance, identity and project registry live in the foundation repository.
+
+## Licensing
+See [LICENSING.md](LICENSING.md) for website editorial content, branding and repository-specific software licensing. Existing project licenses are unchanged.
