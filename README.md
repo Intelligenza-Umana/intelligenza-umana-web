@@ -1,7 +1,8 @@
 # intelligenza-umana-web
-Official static website for Intelligenza Umana: an independent engineering lab focused on reliable software, applied research and collaboration.
 
-The updated portal presents the lab, projects and contribution guidance. Verify the public deployment after each release. Project maturity and unverified installation and tests are stated on the page. No backend, database or runtime API is required.
+Official website for Intelligenza Umana, an independent engineering and applied research initiative.
+
+The static Angular site presents the manifesto, engineering method, founder and projects. On each page load, it requests public repository metadata from the Intelligenza Umana GitHub organization. No backend, database, AI service or scheduled sync is used. If GitHub is unavailable, the page retains a clearly identified list of the four known projects. Repository names, descriptions, topics and update dates come from GitHub and do not by themselves establish project quality or maturity.
 
 ## Development
 ```bash
@@ -9,18 +10,17 @@ npm install
 npm start        # http://localhost:4200
 npm run build    # output in dist/intelligenza-umana-web/browser
 ```
-Angular 22, CSS semplice, nessuna dipendenza esterna a runtime (font di sistema).
+Angular 22, CSS semplice, no external runtime dependencies beyond the public GitHub API request.
 
 ## Brand assets
-Derivati da `brand/logo-02/` della repository madre [intelligenza-umana](https://github.com/fabiozagaria/intelligenza-umana) (asset raster preliminari):
-- `public/logo-intelligenza-umana.webp`: logo compatto ridotto a 640 px
-- `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`: copiati invariati
-- `public/apple-touch-icon.png`: simbolo profilo ridotto a 180 px
+Derived from `brand/logo-02/` in the foundation repository (preliminary raster assets):
+- `public/logo-intelligenza-umana.webp`: compact logo
+- favicon and Apple touch icon assets
 
-Colori avorio `#fdf8f0` e carbone `#131312` campionati dal logo, non ancora colori di brand definitivi. Quando esisterà il master vettoriale, sostituire gli asset da lì. Font: stack di sistema finché la tipografia non è definita.
+Ivory `#fdf8f0` and charcoal `#131312` are sampled from the logo, not final brand specifications.
 
 ## Vercel deployment
-Progetto Vercel `intelligenza-umana-web` collegato a questa repository (https://intelligenza-umana-web.vercel.app). Framework preset Angular (rilevato automaticamente), build `npm run build`, output `dist/intelligenza-umana-web/browser`.
+Vercel project `intelligenza-umana-web` is connected to this repository. Framework preset Angular, build `npm run build`, output `dist/intelligenza-umana-web/browser`. Verify preview behavior before production publication.
 
 ## Documentation and governance
-Istruzioni agenti: [AGENTS.md](AGENTS.md). Stato: [HANDOFF.md](HANDOFF.md). Mappa: [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md). Chiusura: [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md). Governance, identità e registro: repository madre [intelligenza-umana](https://github.com/fabiozagaria/intelligenza-umana).
+Instructions: [AGENTS.md](AGENTS.md). State: [HANDOFF.md](HANDOFF.md). Documentation map: [docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md). Governance, identity and project registry live in the foundation repository.

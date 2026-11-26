@@ -1,9 +1,9 @@
 # Handoff — 2026-11-26
 
-The static Angular portal has been updated for the independent engineering lab: mission, projects, verification principles, contribution and security contact. The logo and existing ivory/charcoal palette are retained. English is the primary language.
+Branch `docs/narrative-home-design` contains the narrative homepage, live GitHub organization catalog and responsive layout refinements. The mobile header uses a four-item compact navigation grid; the hero stacks logo, purpose and actions. Existing logo and ivory/charcoal palette remain.
 
-Deployment of these changes must be verified after publication. Product installation, tests and releases remain unverified. The foundation is open to contributions and maintained by the founder; Project Lifecycle Skill is MIT licensed. The updated deployment must be verified; a custom domain has not been configured.
+Founder text now says Fabio Zagaria founded the initiative, is an Italian junior developer and is seeking an opportunity in an IT company. This wording is based on the founder's explicit request; no additional credentials are claimed.
 
-`npm ci` and `npm run build` passed. Six in-page anchors were checked. Desktop and mobile rendering still need verification before release. Review links, content and responsive behavior. Update the foundation registry and handoff when the site state changes. Do not deploy without authorization.
+The project section fetches public repository metadata on each page load, filtering the `.github` infrastructure repository. It keeps four known project cards only as an error fallback; successful empty organization data shows an empty state. No backend, database, token, scheduled task or AI service is used.
 
-2026-11-26: Added IU Model Router to the catalog and updated the other repository URLs after their rename. Native host workflows remain unverified. The founder tested the previous layout on a small screen; the updated four-project layout has not yet been independently checked.
+Vercel preview build completed successfully on the earlier UI revision, with a CSS component budget warning. The latest changes need a fresh preview build. Direct browser visual inspection is currently blocked because the Vercel preview redirects to Vercel login/SAML SSO in the browser used for this session. No credentials were entered. Desktop and mobile visual behavior therefore remains unverified in an authenticated browser. No production deployment was triggered.
