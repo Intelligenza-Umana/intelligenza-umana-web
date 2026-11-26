@@ -20,6 +20,59 @@ body {
   background: var(--iu-ivory);
   color: var(--iu-charcoal);
   font-family:
-    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: none;
+}
+
+.language-selector button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 0.35rem;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.language-selector button:hover {
+  background: #f6f0e4;
+}
+
+.language-selector button[aria-pressed='true'] {
+  background: #ede7dc;
+  border-color: #c5bdae;
+}
+
+.language-selector img {
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .header:has(> .language-selector) {
+    reading-flow: grid-rows;
+  }
+
+  .language-selector {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }

@@ -4,6 +4,8 @@ Official website for Intelligenza Umana, an independent engineering and applied 
 
 The static Angular site presents the manifesto, engineering method, founder and projects. On each page load, it requests public repository metadata from the Intelligenza Umana GitHub organization. No backend, database, AI service or scheduled sync is used. If GitHub is unavailable, the page retains a clearly identified list of the four known projects. Repository names, descriptions, topics and update dates come from GitHub and do not by themselves establish project quality or maturity.
 
+The header switches the site between English and Italian. English is the default, and the browser saves the visitor’s choice. Live repository names, descriptions and topics are displayed as supplied by GitHub. The flag images in `public/flags/` come from [FlagCDN](https://flagcdn.com/).
+
 ## Development
 ```bash
 npm install
