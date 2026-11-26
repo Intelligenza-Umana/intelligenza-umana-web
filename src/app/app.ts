@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 
 interface GitHubRepository {
@@ -31,6 +32,7 @@ const knownProjects: ProjectCard[] = [
 
 @Component({
   selector: 'app-root',
+  imports: [DatePipe],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
