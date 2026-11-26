@@ -93,6 +93,10 @@ const en = {
   securityIntro: 'For vulnerability reports, see the',
   securityLink: 'private reporting guidance',
   githubOrganization: 'GitHub organization',
+  licenseSoftware: 'Software: individual repository licenses',
+  licenseContent: 'Original editorial content:',
+  licenseBrand: 'Logo and visual identity: all rights reserved.',
+  licenseDetails: 'Licensing details',
 };
 
 const it: typeof en = {
@@ -191,6 +195,10 @@ const it: typeof en = {
   securityIntro: 'Per segnalare vulnerabilità, consulta le',
   securityLink: 'istruzioni per le segnalazioni private',
   githubOrganization: 'Organizzazione GitHub',
+  licenseSoftware: 'Software: licenze dei singoli repository',
+  licenseContent: 'Contenuti editoriali originali:',
+  licenseBrand: 'Logo e identità visiva: tutti i diritti riservati.',
+  licenseDetails: 'Dettagli sulle licenze',
 };
 
 export const siteCopy = { en, it };
