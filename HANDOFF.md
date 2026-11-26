@@ -5,3 +5,5 @@ The static Angular portal has been updated for the independent engineering lab: 
 Deployment of these changes must be verified after publication. Product installation, tests and releases remain unverified. The foundation is open to contributions and maintained by the founder; Project Lifecycle Skill is MIT licensed. The updated deployment must be verified; a custom domain has not been configured.
 
 `npm ci` and `npm run build` passed. Six in-page anchors were checked. Desktop and mobile rendering still need verification before release. Review links, content and responsive behavior. Update the foundation registry and handoff when the site state changes. Do not deploy without authorization.
+
+2026-11-26: Added IU Model Router to the catalog and updated the other repository URLs after their rename. Native host workflows remain unverified. The founder tested the previous layout on a small screen; the updated four-project layout has not yet been independently checked.
