@@ -76,3 +76,25 @@ body {
     grid-row: 1;
   }
 }
+
+app-root a.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--iu-ivory);
+  border-radius: 50%;
+  background: var(--iu-charcoal);
+  color: var(--iu-ivory);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  background: #44423d;
+}

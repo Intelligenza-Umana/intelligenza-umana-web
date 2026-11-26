@@ -13,3 +13,5 @@ Vercel preview build completed successfully on the earlier UI revision, with a C
 2026-11-26: Nome mostrato «IU Model Router» cambiato in «Model Router» nell’elenco di riserva dei progetti (`app.ts`); il nome del repository `iu-model-router` e gli URL restano invariati. Build eseguita.
 
 2026-11-26: Il selettore nell’header cambia la lingua tra inglese e italiano, con bandiere locali e preferenza salvata nel browser. L’inglese è la lingua iniziale. Il catalogo mostra i metadati ricevuti da GitHub nella lingua della fonte. Verificati build di produzione e rendering locale in Chromium da 320 a 1280 px, inclusi tastiera, ricarica e stati del catalogo con risposte simulate. La build conserva l’avviso preesistente sul budget CSS.
+
+2026-11-26: Il pulsante fisso in basso a destra riporta all’header, anche da tastiera. Verificati in Chromium il cambio di etichetta tra inglese e italiano, il ritorno del focus all’header e la distanza dal footer a larghezze da 320 a 1280 px. Build riuscita con l’avviso CSS preesistente.

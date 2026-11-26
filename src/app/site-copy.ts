@@ -5,6 +5,7 @@ const en = {
   description:
     'Intelligenza Umana is an independent engineering lab building useful, reliable and verifiable software with human responsibility.',
   skip: 'Skip to content',
+  backToTop: 'Back to top',
   home: 'Intelligenza Umana home',
   navigation: 'Main navigation',
   languageSelector: 'Site language',
@@ -99,6 +100,7 @@ const it: typeof en = {
   description:
     'Intelligenza Umana è un laboratorio di ingegneria indipendente che sviluppa software utile, affidabile e verificabile, sotto la responsabilità delle persone.',
   skip: 'Vai al contenuto',
+  backToTop: 'Torna in cima',
   home: 'Pagina iniziale di Intelligenza Umana',
   navigation: 'Navigazione principale',
   languageSelector: 'Lingua del sito',
