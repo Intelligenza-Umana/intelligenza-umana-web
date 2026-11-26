@@ -9,3 +9,5 @@ The project section fetches public repository metadata on each page load, filter
 Vercel preview build completed successfully on the earlier UI revision, with a CSS component budget warning. The latest changes need a fresh preview build. Direct browser visual inspection is currently blocked because the Vercel preview redirects to Vercel login/SAML SSO in the browser used for this session. No credentials were entered. Desktop and mobile visual behavior therefore remains unverified in an authenticated browser. No production deployment was triggered.
 
 2026-11-26: Sezione Founder con ritratto di Fabio Zagaria (`public/fabio-zagaria.webp`) al posto del segnaposto «IU», e motivazione intera (`docs/MOTIVATION.md` della madre) sotto la presentazione. Schede dei progetti con bordi e spaziatura uniformi. Build eseguita (budget CSS 8 kB rispettato); test non presenti.
+
+2026-11-26: Nome mostrato «IU Model Router» cambiato in «Model Router» nell’elenco di riserva dei progetti (`app.ts`); il nome del repository `iu-model-router` e gli URL restano invariati. Build eseguita.
