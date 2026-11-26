@@ -1,6 +1,6 @@
 @let t = copy();
 <a class="skip" href="#main">{{ t.skip }}</a>
-<header class="header wrap">
+<header class="header wrap" id="page-top" tabindex="-1">
   <a class="brand" href="#top" [attr.aria-label]="t.home">
     <img src="logo-intelligenza-umana.webp" width="640" height="640" alt="" />
     <span>Intelligenza<br />Umana</span>
@@ -208,3 +208,6 @@
   <span>Intelligenza Umana</span><span>{{ t.heroTitle }} {{ t.heroSubtitle }}</span
   ><a href="https://github.com/Intelligenza-Umana">{{ t.githubOrganization }} &rarr;</a>
 </footer>
+<a class="back-to-top" href="#page-top" [attr.aria-label]="t.backToTop" [title]="t.backToTop">
+  <span aria-hidden="true">&uarr;</span>
+</a>
