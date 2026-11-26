@@ -8,4 +8,4 @@
 | `docs/DOCUMENTATION_MAP.md` | Mappa dei documenti | Questo file | Cambia la struttura documentale |
 | `docs/DEFINITION_OF_DONE.md` | Criteri di chiusura | Questo file | Cambiano i criteri |
 | `src/`, `public/`, `angular.json`, `package.json` | Codice e asset del sito | Il codice stesso | Modifiche al sito |
-Fuori da questa repository (madre `intelligenza-umana`): identità e logo in `brand/`, contenuti in `editorial/`, registro in `docs/PROJECT_REGISTRY.md`, strategia sito in `website/` e `studio/`.
+Fuori da questa repository (madre `intelligenza-umana`): identità e logo in `brand/`, registry in `docs/PROJECT_REGISTRY.md`, site requirements in `website/`, and engineering principles in `docs/ENGINEERING_STANDARD.md`.

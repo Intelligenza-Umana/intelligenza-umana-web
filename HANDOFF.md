@@ -1,24 +1,7 @@
-# Handoff — 2026-11-25
-## Obiettivo
-Creare la bozza statica del sito di Intelligenza Umana («Sito in costruzione») e applicare il bootstrap della Project Lifecycle Skill.
+# Handoff — 2026-11-26
 
-## Stato verificato
-Pagina Angular 22 con logo, favicon e messaggio di costruzione. Build di produzione e rendering a 1280 e 390 px verificati localmente (nessun errore in console, nessuno scroll orizzontale). Branch `ccr-a50fc034-hsgjg6`, PR draft #1. Deploy Vercel eseguito il 2026-11-25 dalla branch (commit `42d5238`): progetto `intelligenza-umana-web`, team javametalcoders-projects, stato Ready, https://intelligenza-umana-web.vercel.app risponde 200 con titolo, favicon e logo.
+The static Angular portal has been updated for the independent engineering lab: mission, projects, verification principles, contribution and security contact. The logo and existing ivory/charcoal palette are retained. English is the primary language.
 
-## Completato e file modificati
-App in `src/` e `public/`; README; AGENTS.md, CLAUDE.md, HANDOFF.md, `docs/DOCUMENTATION_MAP.md`, `docs/DEFINITION_OF_DONE.md`.
+Deployment of these changes must be verified after publication. Product installation, tests and releases remain unverified. The community is not yet operational; Project Lifecycle Skill has no explicit license. The existing Vercel deployment and custom domain have not been reverified.
 
-## Test e verifiche
-Nessun test automatico scritto. Favicon a 16 px non controllato nel browser. Build di produzione rieseguita dopo le modifiche documentali: OK; link relativi dei documenti controllati.
-
-## Decisioni
-Colori e font non sono scelte di brand definitive: avorio/carbone campionati dal logo, font di sistema. Link Instagram omesso perché l'handle non è verificato direttamente. Template ARCHITECTURE, ROADMAP, TASKS, VISION, DECISIONS non creati: per una pagina sola sarebbero placeholder.
-
-## Blocchi e rischi
-Dominio personalizzato non collegato. Il deploy è dalla branch di sessione: `main` contiene ancora solo il README iniziale, quindi i push su `main` non pubblicheranno la pagina finché la PR non è unita. Asset logo raster preliminari, fondo non trasparente.
-
-## Prossimo passo
-Unire la PR #1, collegare il dominio su Vercel; poi definire struttura e contenuti del sito (archivio articoli, fonti, newsletter: vedi `studio/` della madre).
-
-## Integrità documentale
-Aggiornati: README, AGENTS, CLAUDE, HANDOFF, mappa, Definition of Done. Verificati invariati: configurazione Angular, asset. Discrepanze: nessuna nota. Verifiche mancanti: test automatici, favicon 16 px nel browser, dominio.
+`npm ci` and `npm run build` passed. Six in-page anchors were checked. Desktop and mobile rendering still need verification before release. Review links, content and responsive behavior. Update the foundation registry and handoff when the site state changes. Do not deploy without authorization.
