@@ -107,3 +107,6 @@ h3{font-size:1.45rem;letter-spacing:-.035em;margin:1.75rem 0 .75rem;overflow-wra
  .footer{display:grid;grid-template-columns:1fr;gap:.6rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+.footer-licensing{flex-basis:100%;display:flex;flex-wrap:wrap;gap:.6rem 1.25rem;padding-top:1rem;border-top:1px solid #d8d2c7;line-height:1.6}
+@media(max-width:760px){.footer-licensing{flex-direction:column;gap:.4rem}}
