@@ -27,7 +27,7 @@ const knownProjects: ProjectCard[] = [
   { name: 'Learning Ledger', url: 'https://github.com/fabiozagaria/iu-learning-ledger', description: 'A local evidence ledger for AI-assisted learning, with deterministic rules that keep mastery assessments tied to evidence.', topics: ['learning', 'AI assistance', 'MIT'] },
   { name: 'Spring Security Advisor', url: 'https://github.com/fabiozagaria/iu-spring-security-advisor', description: 'A Spring Boot security review assistant. Its score is not a security certification.', topics: ['security', 'Spring Boot', 'MIT'] },
   { name: 'Project Lifecycle Skill', url: 'https://github.com/fabiozagaria/iu-project-lifecycle-skill', description: 'A skill for preserving project decisions, context and handoffs across AI-assisted work.', topics: ['developer tools', 'early version', 'MIT'] },
-  { name: 'IU Model Router', url: 'https://github.com/fabiozagaria/iu-model-router', description: 'An early model-routing skill for coding agents. Native discovery and delegation remain unverified.', topics: ['AI', 'developer tools', 'early version', 'MIT'] },
+  { name: 'Model Router', url: 'https://github.com/fabiozagaria/iu-model-router', description: 'An early model-routing skill for coding agents. Native discovery and delegation remain unverified.', topics: ['AI', 'developer tools', 'early version', 'MIT'] },
 ];
 
 @Component({
