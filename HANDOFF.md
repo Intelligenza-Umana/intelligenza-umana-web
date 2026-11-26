@@ -1,9 +1,11 @@
 # Handoff — 2026-11-26
 
-The static Angular portal has been updated for the independent engineering lab: mission, projects, verification principles, contribution and security contact. The logo and existing ivory/charcoal palette are retained. English is the primary language.
+The static Angular portal has been revised in branch `docs/narrative-home-design` to lead with the logo, manifesto and engineering method, followed by the organization project catalog, founder section and contribution guidance. Existing ivory/charcoal palette and logo asset are retained.
 
-Deployment of these changes must be verified after publication. Product installation, tests and releases remain unverified. The foundation is open to contributions and maintained by the founder; Project Lifecycle Skill is MIT licensed. The updated deployment must be verified; a custom domain has not been configured.
+The project section requests public repository metadata from the GitHub organization on each page load. It filters the organization’s `.github` infrastructure repository. Known project cards remain as fallback if the request fails; a successful empty response displays an empty-state message. Repository metadata is external input rendered as Angular text interpolation. No token, backend, database, AI service or scheduled job is used.
 
-`npm ci` and `npm run build` passed. Six in-page anchors were checked. Desktop and mobile rendering still need verification before release. Review links, content and responsive behavior. Update the foundation registry and handoff when the site state changes. Do not deploy without authorization.
+Founder copy names Fabio Zagaria as founder and links to his public GitHub profile; no biography or credentials are asserted.
 
-2026-11-26: Added IU Model Router to the catalog and updated the other repository URLs after their rename. Native host workflows remain unverified. The founder tested the previous layout on a small screen; the updated four-project layout has not yet been independently checked.
+The branch preview should be checked for build, responsive layout, API CORS/rate-limit behavior, and whether live repository data appears after official repositories are present in the organization. At the time of this change the organization contained only `.github`, so the live endpoint may return no software projects and the successful empty state is expected. The four known cards appear only if the API call errors.
+
+No production deployment was triggered. The public production website remains unchanged until merge and deployment. Update the foundation project registry and handoff after the website change is accepted and published.
