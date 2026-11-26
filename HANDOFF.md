@@ -1,11 +1,9 @@
 # Handoff — 2026-11-26
 
-The static Angular portal has been revised in branch `docs/narrative-home-design` to lead with the logo, manifesto and engineering method, followed by the organization project catalog, founder section and contribution guidance. Existing ivory/charcoal palette and logo asset are retained.
+Branch `docs/narrative-home-design` contains the narrative homepage, live GitHub organization catalog and responsive layout refinements. The mobile header uses a four-item compact navigation grid; the hero stacks logo, purpose and actions. Existing logo and ivory/charcoal palette remain.
 
-The project section requests public repository metadata from the GitHub organization on each page load. It filters the organization’s `.github` infrastructure repository. Known project cards remain as fallback if the request fails; a successful empty response displays an empty-state message. Repository metadata is external input rendered as Angular text interpolation. No token, backend, database, AI service or scheduled job is used.
+Founder text now says Fabio Zagaria founded the initiative, is an Italian junior developer and is seeking an opportunity in an IT company. This wording is based on the founder's explicit request; no additional credentials are claimed.
 
-Founder copy names Fabio Zagaria as founder and links to his public GitHub profile; no biography or credentials are asserted.
+The project section fetches public repository metadata on each page load, filtering the `.github` infrastructure repository. It keeps four known project cards only as an error fallback; successful empty organization data shows an empty state. No backend, database, token, scheduled task or AI service is used.
 
-The branch preview should be checked for build, responsive layout, API CORS/rate-limit behavior, and whether live repository data appears after official repositories are present in the organization. At the time of this change the organization contained only `.github`, so the live endpoint may return no software projects and the successful empty state is expected. The four known cards appear only if the API call errors.
-
-No production deployment was triggered. The public production website remains unchanged until merge and deployment. Update the foundation project registry and handoff after the website change is accepted and published.
+Vercel preview build completed successfully on the earlier UI revision, with a CSS component budget warning. The latest changes need a fresh preview build. Direct browser visual inspection is currently blocked because the Vercel preview redirects to Vercel login/SAML SSO in the browser used for this session. No credentials were entered. Desktop and mobile visual behavior therefore remains unverified in an authenticated browser. No production deployment was triggered.
