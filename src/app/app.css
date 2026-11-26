@@ -75,10 +75,10 @@ h3{font-size:1.45rem;letter-spacing:-.035em;margin:1.75rem 0 .75rem;overflow-wra
 .footer{border-top:1px solid #d8d2c7;padding-block:2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem}
 @media(max-width:760px){
  .wrap{width:min(100% - 2rem,1180px)}
- .header{min-height:0;display:grid;grid-template-columns:1fr;gap:.4rem;padding-block:.65rem}
+ .header{min-height:0;display:grid;grid-template-columns:1fr auto;gap:.4rem;padding-block:.65rem}
  .brand{gap:.45rem;font-size:.9rem}
  .brand img{width:42px;height:42px}
- nav{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.25rem;border-top:1px solid #d8d2c7;padding-top:.55rem;font-size:.68rem;text-align:center}
+ nav{grid-column:1/-1;grid-row:2;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.25rem;border-top:1px solid #d8d2c7;padding-top:.55rem;font-size:.68rem;text-align:center}
  nav a{white-space:nowrap;padding:.3rem 0}
  .hero{min-height:0;padding-top:2.5rem;padding-bottom:4rem;grid-template-columns:1fr;gap:1rem}
  .hero-copy{display:contents}
@@ -95,8 +95,7 @@ h3{font-size:1.45rem;letter-spacing:-.035em;margin:1.75rem 0 .75rem;overflow-wra
  .approach-inner,.founder-inner{padding-block:3.5rem}
  .section-heading{display:block;margin-bottom:1.75rem}
  .section-heading>p{margin-top:1rem}
- .projects{grid-template-columns:1fr}
- .projects{gap:1rem}
+ .projects{grid-template-columns:1fr;gap:1rem}
  .projects article{padding:1.5rem 1.25rem;min-height:0}
  .card-top{font-size:.6rem;letter-spacing:.1em}
  h3{font-size:1.3rem;margin:1.4rem 0 .7rem}
