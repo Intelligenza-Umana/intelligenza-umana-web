@@ -33,7 +33,7 @@ interface ProjectCard {
 const knownProjects = [
   {
     name: 'Learning Ledger',
-    url: 'https://github.com/fabiozagaria/iu-learning-ledger',
+    url: 'https://github.com/Intelligenza-Umana/iu-learning-ledger',
     en: {
       description:
         'A local evidence ledger for AI-assisted learning, with deterministic rules that keep mastery assessments tied to evidence.',
@@ -47,7 +47,7 @@ const knownProjects = [
   },
   {
     name: 'Spring Security Advisor',
-    url: 'https://github.com/fabiozagaria/iu-spring-security-advisor',
+    url: 'https://github.com/Intelligenza-Umana/iu-spring-security-advisor',
     en: {
       description:
         'A Spring Boot security review assistant. Its score is not a security certification.',
@@ -61,7 +61,7 @@ const knownProjects = [
   },
   {
     name: 'Project Lifecycle Skill',
-    url: 'https://github.com/fabiozagaria/iu-project-lifecycle-skill',
+    url: 'https://github.com/Intelligenza-Umana/iu-project-lifecycle-skill',
     en: {
       description:
         'A skill for preserving project decisions, context and handoffs across AI-assisted work.',
@@ -75,7 +75,7 @@ const knownProjects = [
   },
   {
     name: 'Model Router',
-    url: 'https://github.com/fabiozagaria/iu-model-router',
+    url: 'https://github.com/Intelligenza-Umana/iu-model-router',
     en: {
       description:
         'An early model-routing skill for coding agents. Native discovery and delegation remain unverified.',
