@@ -88,6 +88,8 @@ const en = {
   contributeSubtitle: 'through review.',
   contributeBody:
     'Everyone can read public projects and propose changes through a fork and pull request. Maintainers review contributions before merging. Direct write access is reserved for authorized members.',
+  joinCommunity: 'Request to join',
+  membershipNote: 'Organization membership is optional. Requests open a public GitHub issue; do not share personal information. You can also contact us privately.',
   contributeLink: 'How to contribute',
   foundationIssues: 'Browse foundation issues',
   marketplaceIssue: 'Verify marketplace installation',
@@ -192,6 +194,8 @@ const it: typeof en = {
   contributeSubtitle: 'il nostro lavoro.',
   contributeBody:
     'Chiunque può consultare i progetti pubblici e proporre modifiche tramite un fork e una pull request. I manutentori esaminano i contributi prima di integrarli. L’accesso diretto in scrittura è riservato alle persone autorizzate.',
+  joinCommunity: 'Richiedi di entrare',
+  membershipNote: 'L’adesione all’organizzazione è facoltativa. La richiesta apre una issue pubblica su GitHub: non condividere dati personali. Puoi anche contattarci in privato.',
   contributeLink: 'Come contribuire',
   foundationIssues: 'Consulta le issue della fondazione',
   marketplaceIssue: 'Verifica l’installazione del marketplace',
