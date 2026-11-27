@@ -125,6 +125,19 @@ export class App implements OnInit {
       this.document.documentElement.lang = this.language();
       this.title.setTitle(copy.title);
       this.meta.updateTag({ name: 'description', content: copy.description });
+      const origin = this.document.location?.origin;
+      if (origin) {
+        this.meta.updateTag({ property: 'og:title', content: copy.title });
+        this.meta.updateTag({ property: 'og:description', content: copy.description });
+        this.meta.updateTag({ property: 'og:locale', content: this.language() === 'it' ? 'it_IT' : 'en_US' });
+        this.meta.updateTag({ property: 'og:type', content: 'website' });
+        this.meta.updateTag({ property: 'og:url', content: origin + '/' });
+        this.meta.updateTag({ property: 'og:image', content: 'https://raw.githubusercontent.com/Intelligenza-Umana/intelligenza-umana-web/main/public/logo-intelligenza-umana.webp' });
+        this.meta.updateTag({ property: 'og:image:alt', content: 'Intelligenza Umana logo' });
+        this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
+        this.meta.updateTag({ name: 'twitter:title', content: copy.title });
+        this.meta.updateTag({ name: 'twitter:description', content: copy.description });
+      }
     });
   }
 

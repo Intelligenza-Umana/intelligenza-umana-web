@@ -89,6 +89,8 @@ const en = {
   contributeBody:
     'Everyone can read public projects and propose changes through a fork and pull request. Maintainers review contributions before merging. Direct write access is reserved for authorized members.',
   contributeLink: 'How to contribute',
+  foundationIssues: 'Browse foundation issues',
+  marketplaceIssue: 'Verify marketplace installation',
   contact: 'Get in touch',
   securityIntro: 'For vulnerability reports, see the',
   securityLink: 'private reporting guidance',
@@ -191,6 +193,8 @@ const it: typeof en = {
   contributeBody:
     'Chiunque può consultare i progetti pubblici e proporre modifiche tramite un fork e una pull request. I manutentori esaminano i contributi prima di integrarli. L’accesso diretto in scrittura è riservato alle persone autorizzate.',
   contributeLink: 'Come contribuire',
+  foundationIssues: 'Consulta le issue della fondazione',
+  marketplaceIssue: 'Verifica l’installazione del marketplace',
   contact: 'Contattaci',
   securityIntro: 'Per segnalare vulnerabilità, consulta le',
   securityLink: 'istruzioni per le segnalazioni private',
