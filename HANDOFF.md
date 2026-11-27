@@ -17,3 +17,5 @@ Vercel preview build completed successfully on the earlier UI revision, with a C
 2026-11-26: Il pulsante fisso in basso a destra riporta all’header, anche da tastiera. Verificati in Chromium il cambio di etichetta tra inglese e italiano, il ritorno del focus all’header e la distanza dal footer a larghezze da 320 a 1280 px. Build riuscita con l’avviso CSS preesistente.
 
 2026-11-27: Added bilingual licensing footer and LICENSING.md on docs/site-licensing. Existing MIT licenses unchanged; Apache-2.0 preferred for new projects. Build and visual checks pending; no production deployment initiated. Foundation governance files GOVERNANCE.md and SOURCE_OF_TRUTH.md returned 404 at organization repository paths.
+
+2026-11-27: Prepared bilingual optional organization membership CTA in the existing participation section. It opens the public foundation membership issue template; private contact remains available. Depends on foundation PR #12 merging first. Build, visual checks and production deployment not performed in this session.
