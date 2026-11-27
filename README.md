@@ -6,6 +6,8 @@ The static Angular site presents the manifesto, engineering method, founder and 
 
 The header switches the site between English and Italian. English is the default, and the browser saves the visitor’s choice. Live repository names, descriptions and topics are displayed as supplied by GitHub. The flag images in `public/flags/` come from [FlagCDN](https://flagcdn.com/).
 
+The participation section links to the [Intelligenza Umana Discord server](https://discord.gg/fMRBCNgHb) with Discord's unmodified official symbol.
+
 ## Development
 ```bash
 npm install
@@ -18,6 +20,7 @@ Angular 22, CSS semplice, no external runtime dependencies beyond the public Git
 Derived from `brand/logo-02/` in the foundation repository (preliminary raster assets):
 - `public/logo-intelligenza-umana.webp`: compact logo
 - favicon and Apple touch icon assets
+- `public/discord-symbol.svg`: Discord's official black symbol, used beside the server invitation; see [Discord's brand guidelines](https://discord.com/branding).
 
 Ivory `#fdf8f0` and charcoal `#131312` are sampled from the logo, not final brand specifications.
 
