@@ -6,6 +6,8 @@ The static Angular site presents the manifesto, engineering method, founder and 
 
 The header switches the site between English and Italian. English is the default, and the browser saves the visitor’s choice. Live repository names, descriptions and topics are displayed as supplied by GitHub. The flag images in `public/flags/` come from [FlagCDN](https://flagcdn.com/).
 
+The contribution section fetches up to 12 public, open, unassigned issues labeled `good first issue` through GitHub’s public search API. Loading, empty and error states are explicit; the direct GitHub search remains available if the API is unavailable. Issue titles come from GitHub and remain in their original language. No credentials or additional services are required.
+
 The participation section links to the [Intelligenza Umana Discord server](https://discord.gg/Zt85ZYEXAA) with Discord's unmodified official symbol.
 
 ## Development

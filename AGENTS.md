@@ -2,10 +2,10 @@
 Metodo: Project Lifecycle Skill v0.2.0 (https://github.com/fabiozagaria/project-lifecycle-skill); le regole locali sono autosufficienti.
 
 ## Obiettivi e ambito
-Sito pubblico ufficiale di Intelligenza Umana. Static Angular portal with project and contribution information. Solo front-end statico: nessun back-end, database, dati dinamici o chiamate esterne a runtime. Deploy previsto su Vercel.
+Sito pubblico ufficiale di Intelligenza Umana. Static Angular portal with project and contribution information. Static frontend only: no backend, database or credentials. Public GitHub API calls at runtime are permitted for the organization repository catalog and beginner contribution opportunities; preserve explicit failure states. Deploy previsto su Vercel.
 
 ## Governance e fonti
-Repository madre autorevole per identità, principi, standard e registro: https://github.com/fabiozagaria/intelligenza-umana. Prima di lavorare su contenuti, grafica o identità consulta `GOVERNANCE.md`, `SOURCE_OF_TRUTH.md`, `brand/BRAND_GUIDELINES.md`, `brand/ANTI_AI_SLOP.md` e `docs/ENGINEERING_STANDARD.md` della madre. Non duplicarle qui. Se la madre non è accessibile, segnala il blocco per ciò che ne dipende. Questa repository è autorevole solo per codice e architettura del sito.
+Repository madre autorevole per identità, principi, standard e registro: https://github.com/Intelligenza-Umana/intelligenza-umana. Prima di lavorare su contenuti, grafica o identità consulta `docs/GOVERNANCE.md`, `docs/SOURCE_OF_TRUTH.md`, `brand/BRAND_GUIDELINES.md`, `brand/ANTI_AI_SLOP.md` e `docs/ENGINEERING_STANDARD.md` della madre. Non duplicarle qui. Se la madre non è accessibile, segnala il blocco per ciò che ne dipende. Questa repository è autorevole solo per codice e architettura del sito.
 
 ## Convenzioni e comandi verificati
 - `npm install`; `npm start` (http://localhost:4200); `npm run build` (output `dist/intelligenza-umana-web/browser`). Angular 22, CSS semplice, font di sistema.
