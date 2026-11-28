@@ -23,7 +23,8 @@ Taken unmodified from the approved visual identity in `assets/brand/` of the fou
 - Inline SVG in the opening (`src/app/app.html`, class `hero-geometry`): line drawing of a circle, a square and an open arc, drawn for this site as decoration in the opening (no external source). It is not the emblem and needs the founder's approval as part of the visual identity.
 - `public/logo-light.svg`: emblem, used in the header (canonical `logo-light.svg`)
 - `public/favicon.svg`: canonical `favicon-light.svg`
-- `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` and `og-image.png`: raster exports of the canonical SVGs (favicon-light emblem; the horizontal wordmark centred on a white 1200 × 630 canvas for the social preview)
+- `public/favicon.svg`: the favicon-light emblem path from the foundation's `assets/brand/`, unchanged, scaled into a circular ring on a transparent background; it turns white on dark browser themes (`prefers-color-scheme`). `public/favicon.ico` (16, 32 and 48 px, transparent) was rendered from it with Chromium and ImageMagick. The ICO is black on transparent, so it is hard to see on dark browser tabs; `index.html` declares it `sizes="32x32"` so browsers that support SVG favicons use the adaptive SVG.
+- `public/apple-touch-icon.png` and `og-image.png`: raster exports of the canonical SVGs (favicon-light emblem; the horizontal wordmark centred on a white 1200 × 630 canvas for the social preview)
 - `public/discord-symbol.svg`: Discord's official black symbol, used beside the server invitation; see [Discord's brand guidelines](https://discord.com/branding).
 
 Ivory `#fdf8f0` and charcoal `#131312` were sampled from the retired monogram and are not part of the approved monochrome identity; the site palette is unchanged until a site-wide decision. The three brand backgrounds are not used on the site yet.
