@@ -149,7 +149,7 @@ export class App implements OnInit {
         this.meta.updateTag({ property: 'og:locale', content: this.language() === 'it' ? 'it_IT' : 'en_US' });
         this.meta.updateTag({ property: 'og:type', content: 'website' });
         this.meta.updateTag({ property: 'og:url', content: origin + '/' });
-        this.meta.updateTag({ property: 'og:image', content: 'https://raw.githubusercontent.com/Intelligenza-Umana/intelligenza-umana-web/main/public/logo-intelligenza-umana.webp' });
+        this.meta.updateTag({ property: 'og:image', content: 'https://raw.githubusercontent.com/Intelligenza-Umana/intelligenza-umana-web/main/public/og-image.png' });
         this.meta.updateTag({ property: 'og:image:alt', content: 'Intelligenza Umana logo' });
         this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
         this.meta.updateTag({ name: 'twitter:title', content: copy.title });

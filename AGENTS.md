@@ -9,7 +9,7 @@ Repository madre autorevole per identità, principi, standard e registro: https:
 
 ## Convenzioni e comandi verificati
 - `npm install`; `npm start` (http://localhost:4200); `npm run build` (output `dist/intelligenza-umana-web/browser`). Angular 22, CSS semplice, font di sistema.
-- Asset di brand derivati da `brand/logo-02/` della madre; non modificare i master e non inventare colori o font definitivi. Avorio `#fdf8f0` e carbone `#131312` sono campionati dal logo.
+- Asset di brand dall'identità approvata in `assets/brand/` della madre (Logo 02 ritirato); non modificare i master e non inventare colori o font definitivi. Avorio `#fdf8f0` e carbone `#131312` erano campionati dal vecchio monogramma e restano finché non si decide la palette del sito.
 - Do not claim tests or deployments that have not been verified.
 
 ## Sicurezza e autorizzazioni
