@@ -2,6 +2,8 @@
 
 Official website for Intelligenza Umana, an independent engineering and applied research initiative.
 
+[Open the live website](https://intelligenza-umana-web.vercel.app/) · [Browse the project catalog on GitHub](https://github.com/Intelligenza-Umana?tab=repositories)
+
 The static Angular site is a technical portal. The page order is: opening, projects (a table), contribute (beginner issues, membership request, Discord invitation), method and a short About block. The foundation manifesto and the founder's full motivation text stay on GitHub and are linked, not reproduced. On each page load, it requests public repository metadata from the Intelligenza Umana GitHub organization. No backend, database, AI service or scheduled sync is used. If GitHub is unavailable, the page retains a clearly identified list of the nine projects in the catalog on 2026-11-28. Repository names, descriptions, licences and update dates come from GitHub and do not by themselves establish project quality or maturity.
 
 The header switches the site between English and Italian. English is the default, and the browser saves the visitor’s choice. Live repository names, descriptions, licences and update dates are displayed as supplied by GitHub. The flag images in `public/flags/` come from [FlagCDN](https://flagcdn.com/).
