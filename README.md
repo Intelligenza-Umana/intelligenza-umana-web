@@ -20,7 +20,7 @@ Angular 22, plain CSS, no external runtime dependencies beyond the public GitHub
 
 ## Brand assets
 Taken unmodified from the approved visual identity in `assets/brand/` of the foundation repository (Logo 02, the former IU monogram, is retired):
-- `public/hero-geometry.svg`: line drawing of a circle, a square and an open arc, drawn for this site as decoration in the opening (no external source). It is not the emblem and needs the founder's approval as part of the visual identity.
+- Inline SVG in the opening (`src/app/app.html`, class `hero-geometry`): line drawing of a circle, a square and an open arc, drawn for this site as decoration in the opening (no external source). It is not the emblem and needs the founder's approval as part of the visual identity.
 - `public/logo-light.svg`: emblem, used in the header (canonical `logo-light.svg`)
 - `public/favicon.svg`: canonical `favicon-light.svg`
 - `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` and `og-image.png`: raster exports of the canonical SVGs (favicon-light emblem; the horizontal wordmark centred on a white 1200 × 630 canvas for the social preview)
