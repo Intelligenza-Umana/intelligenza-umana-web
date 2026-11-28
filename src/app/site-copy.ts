@@ -129,7 +129,7 @@ const en = {
   noLicence: 'No licence declared',
   contributeHeading: 'Contribute',
   contributeSteps:
-    'Fork a project, make a change, open a pull request. Maintainers review it before merging. Organization membership is optional.',
+    'Fork a project, make a change, open a pull request. Maintainers review it before merging.',
   issuesHeading: 'Open issues for beginners',
   colIssue: 'Issue',
   colTitle: 'Title',
@@ -275,7 +275,7 @@ const it: typeof en = {
   noLicence: 'Nessuna licenza dichiarata',
   contributeHeading: 'Contribuisci',
   contributeSteps:
-    'Fai il fork di un progetto, modificalo e apri una pull request. I manutentori la esaminano prima di integrarla. L’adesione all’organizzazione è facoltativa.',
+    'Fai il fork di un progetto, modificalo e apri una pull request. I manutentori la esaminano prima di integrarla.',
   issuesHeading: 'Issue aperte per principianti',
   colIssue: 'Issue',
   colTitle: 'Titolo',

@@ -133,30 +133,56 @@
       </p>
     }
   </section>
-  <section id="opportunities" class="section wrap" aria-labelledby="opportunities-title">
+  <section id="contribute" class="section wrap contribute" aria-labelledby="contribute-title">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">{{ t.startContributing }}</p>
-        <h2 id="opportunities-title">{{ t.opportunitiesTitle }}</h2>
+        <h2 id="contribute-title">{{ t.contributeHeading }}</h2>
       </div>
-      <p>{{ t.opportunitiesIntro }}</p>
+      <p>{{ t.contributeSteps }}</p>
     </div>
-    @if (contributionsLoading()) {
-      <p class="catalog-status" role="status">{{ t.opportunitiesLoading }}</p>
-    } @else if (contributionsError()) {
-      <div class="catalog-notice" role="status">
-        <p>{{ t.opportunitiesError }}</p>
-        <button type="button" (click)="loadContributions()">{{ t.retry }}</button>
-      </div>
-    } @else if (contributionIssues().length === 0) {
-      <p class="catalog-status" role="status">{{ t.opportunitiesEmpty }}</p>
-    } @else {
-      <app-contribution-list [issues]="contributionIssues()" />
-      <p class="catalog-source">{{ t.opportunitiesSource }}</p>
-    }
+    <div id="opportunities">
+      <h3>{{ t.issuesHeading }}</h3>
+      <p class="issues-intro">{{ t.opportunitiesIntro }}</p>
+      @if (contributionsLoading()) {
+        <p class="catalog-status" role="status">{{ t.opportunitiesLoading }}</p>
+      } @else if (contributionsError()) {
+        <div class="catalog-notice" role="status">
+          <p>{{ t.opportunitiesError }}</p>
+          <button type="button" (click)="loadContributions()">{{ t.retry }}</button>
+        </div>
+      } @else if (contributionIssues().length === 0) {
+        <p class="catalog-status" role="status">{{ t.opportunitiesEmpty }}</p>
+      } @else {
+        <app-contribution-list [issues]="contributionIssues()" />
+        <p class="catalog-source">{{ t.opportunitiesSource }}</p>
+      }
+      <p><a class="text-link" [href]="contributionSearchUrl">{{ t.opportunitiesBrowse }}</a></p>
+    </div>
     <div class="actions">
-      <a class="button" [href]="contributionSearchUrl">{{ t.opportunitiesBrowse }} &rarr;</a>
+      <a
+        class="button"
+        href="https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md"
+        >{{ t.joinCommunity }}</a
+      >
+      <a class="text-link" href="https://discord.gg/Zt85ZYEXAA" target="_blank" rel="noopener noreferrer">
+        <img class="discord-mark" src="discord-symbol.svg" width="20" height="15" alt="" />
+        {{ t.discordCommunity }}</a
+      >
+      <a class="text-link" href="https://github.com/Intelligenza-Umana/.github/blob/main/CONTRIBUTING.md">{{
+        t.contributeLink
+      }}</a>
+      <a class="text-link" href="https://github.com/Intelligenza-Umana/iu-marketplace/issues/2">{{
+        t.marketplaceIssue
+      }}</a>
+      <a class="text-link" href="mailto:intelligenzaumana.lab@gmail.com">{{ t.contact }}</a>
     </div>
+    <p class="membership">{{ t.membershipNote }}</p>
+    <p class="security">
+      {{ t.securityIntro }}
+      <a href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/SECURITY.md">{{
+        t.securityLink
+      }}</a>.
+    </p>
   </section>
   <section id="founder" class="founder">
     <div class="wrap founder-inner">
@@ -194,34 +220,6 @@
         </figcaption>
       </figure>
     </div>
-  </section>
-  <section class="section wrap contribute" id="contribute">
-    <p class="eyebrow">{{ t.contributeLabel }}</p>
-    <h2>{{ t.contributeTitle }}<br />{{ t.contributeSubtitle }}</h2>
-    <p>{{ t.contributeBody }}</p>
-    <p>{{ t.membershipNote }}</p>
-    <div class="actions">
-      <a class="button" href="https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md">{{ t.joinCommunity }} <span aria-hidden="true">&rarr;</span></a>
-      <a
-        class="text-link"
-        href="https://github.com/Intelligenza-Umana/.github/blob/main/CONTRIBUTING.md"
-        >{{ t.contributeLink }} &rarr;</a
-      ><a class="text-link" href="#opportunities">{{ t.startContributing }}</a
-      ><a class="text-link" href="https://github.com/Intelligenza-Umana/iu-marketplace/issues/2">{{ t.marketplaceIssue }}</a
-      ><a class="text-link" href="mailto:intelligenzaumana.lab@gmail.com">{{ t.contact }}</a>
-    </div>
-    <app-discord-widget
-      [heading]="t.discordPanelTitle"
-      [body]="t.discordPanelBody"
-      [button]="t.discordCommunity"
-      [title]="t.discordWidgetTitle"
-    />
-    <p class="security">
-      {{ t.securityIntro }}
-      <a href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/SECURITY.md">{{
-        t.securityLink
-      }}</a>.
-    </p>
   </section>
 </main>
 <footer class="wrap footer">

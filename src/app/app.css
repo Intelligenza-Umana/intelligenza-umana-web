@@ -62,9 +62,12 @@ h3{font-size:1.45rem;letter-spacing:-.035em;margin:1.75rem 0 .75rem;overflow-wra
 .motivation figcaption{margin-top:2rem;font-size:.85rem}
 .founder-inner h2{margin-bottom:1.5rem}
 .founder-inner p:not(.eyebrow){max-width:38rem;line-height:1.7;color:#55534e}
-.contribute{border-top:1px solid #d8d2c7}
-.contribute>p:not(.eyebrow){max-width:42rem;line-height:1.7;margin-top:1.5rem}
+.contribute{border-top:1px solid #131312}
+.contribute h3{font-size:1.05rem;font-weight:650;letter-spacing:0;margin:0 0 .5rem}
+.issues-intro,.membership{max-width:44rem;line-height:1.65;color:#55534e}
 .contribute .security{font-size:.9rem;color:#55534e}
+.contribute .text-link{text-decoration:underline}
+.discord-mark{width:20px;height:15px;vertical-align:-2px;margin-right:.4rem}
 .footer{border-top:1px solid #d8d2c7;padding-block:2rem 4.75rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem}
 @media(max-width:760px){
  .wrap{width:min(100% - 2rem,1180px)}

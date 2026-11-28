@@ -4,7 +4,6 @@ import { Component, computed, DOCUMENT, effect, inject, OnInit, signal } from '@
 import { Meta, Title } from '@angular/platform-browser';
 import { type Language, siteCopy } from './site-copy';
 import { ContributionList, type ContributionIssue } from './contribution-list';
-import { DiscordWidget } from './discord-widget';
 import { ProjectTable } from './project-table';
 
 registerLocaleData(italian);
@@ -109,7 +108,7 @@ const knownProjects = [
 
 @Component({
   selector: 'app-root',
-  imports: [ContributionList, DiscordWidget, ProjectTable],
+  imports: [ContributionList, ProjectTable],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
