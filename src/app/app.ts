@@ -1,10 +1,11 @@
-import { DatePipe, registerLocaleData } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import italian from '@angular/common/locales/it';
 import { Component, computed, DOCUMENT, effect, inject, OnInit, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { type Language, siteCopy } from './site-copy';
 import { ContributionList, type ContributionIssue } from './contribution-list';
 import { DiscordWidget } from './discord-widget';
+import { ProjectTable } from './project-table';
 
 registerLocaleData(italian);
 
@@ -40,11 +41,13 @@ interface ProjectCard {
   updatedAt?: string;
   stars?: number;
   language?: string | null;
+  license: string | null;
 }
 
 const knownProjects = [
   {
     name: 'Learning Ledger',
+    license: 'MIT',
     url: 'https://github.com/Intelligenza-Umana/iu-learning-ledger',
     en: {
       description:
@@ -59,6 +62,7 @@ const knownProjects = [
   },
   {
     name: 'Spring Security Advisor',
+    license: 'MIT',
     url: 'https://github.com/Intelligenza-Umana/iu-spring-security-advisor',
     en: {
       description:
@@ -73,6 +77,7 @@ const knownProjects = [
   },
   {
     name: 'Project Lifecycle Skill',
+    license: 'MIT',
     url: 'https://github.com/Intelligenza-Umana/iu-project-lifecycle-skill',
     en: {
       description:
@@ -87,6 +92,7 @@ const knownProjects = [
   },
   {
     name: 'Model Router',
+    license: 'MIT',
     url: 'https://github.com/Intelligenza-Umana/iu-model-router',
     en: {
       description:
@@ -103,7 +109,7 @@ const knownProjects = [
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, ContributionList, DiscordWidget],
+  imports: [ContributionList, DiscordWidget, ProjectTable],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
@@ -120,9 +126,10 @@ export class App implements OnInit {
     const language = this.language();
     return (
       this.githubProjects() ??
-      knownProjects.map(({ name, url, ...copy }) => ({
+      knownProjects.map(({ name, url, license, ...copy }) => ({
         name,
         url,
+        license,
         ...copy[language],
       }))
     );
@@ -237,6 +244,7 @@ export class App implements OnInit {
             updatedAt: repository.pushed_at,
             stars: repository.stargazers_count,
             language: repository.language,
+            license: repository.license?.spdx_id ?? null,
           })),
       );
     } catch {

@@ -96,8 +96,7 @@
   <section id="projects" class="section wrap projects-section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">{{ t.projectsLabel }}</p>
-        <h2>{{ t.projectsTitle }}</h2>
+        <h2>{{ t.projectsHeading }}</h2>
       </div>
       <p>{{ t.projectsIntro }}</p>
     </div>
@@ -114,33 +113,18 @@
       <p class="catalog-status">{{ t.projectsEmpty }}</p>
     }
     <div class="projects" [class.is-loading]="loading()" aria-live="polite">
-      @for (project of projects(); track project.url; let i = $index) {
-        <article>
-          <div class="card-top">
-            <span>{{ (i + 1).toString().padStart(2, '0') }} / {{ t.organizationProject }}</span
-            ><span>{{ project.language || t.openSource }}</span>
-          </div>
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description || t.projectDefaultDescription }}</p>
-          @if (project.topics.length > 0) {
-            <ul class="topics" [attr.aria-label]="t.repositoryTopics">
-              @for (topic of project.topics; track topic) {
-                <li>{{ topic }}</li>
-              }
-            </ul>
-          }
-          @if (project.updatedAt) {
-            <p class="updated">
-              {{ t.updated }}
-              {{ project.updatedAt | date: 'mediumDate' : undefined : language() }} ·
-              {{ project.stars }} {{ project.stars === 1 ? t.star : t.stars }}
-            </p>
-          }
-          <a [href]="project.url" target="_blank" rel="noopener noreferrer"
-            >{{ t.repository }} <span aria-hidden="true">&rarr;</span></a
-          >
-        </article>
-      }
+      <app-project-table
+        [rows]="projects()"
+        [language]="language()"
+        [labels]="{
+          repository: t.colRepository,
+          description: t.colDescription,
+          licence: t.colLicence,
+          updated: t.colUpdated,
+          noLicence: t.noLicence,
+          defaultDescription: t.projectDefaultDescription,
+        }"
+      />
     </div>
     @if (live()) {
       <p class="catalog-source">
