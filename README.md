@@ -19,12 +19,13 @@ npm run build    # output in dist/intelligenza-umana-web/browser
 Angular 22, plain CSS, no external runtime dependencies beyond the public GitHub API request.
 
 ## Brand assets
-Derived from `brand/logo-02/` in the foundation repository (preliminary raster assets):
-- `public/logo-intelligenza-umana.webp`: compact logo
-- favicon and Apple touch icon assets
+Taken unmodified from the approved visual identity in `assets/brand/` of the foundation repository (Logo 02, the former IU monogram, is retired):
+- `public/logo-light.svg`: emblem, used in the header and hero (canonical `logo-light.svg`)
+- `public/favicon.svg`: canonical `favicon-light.svg`
+- `public/favicon.ico`, `favicon-16.png`, `favicon-32.png`, `apple-touch-icon.png` and `og-image.png`: raster exports of the canonical SVGs (favicon-light emblem; the horizontal wordmark centred on a white 1200 × 630 canvas for the social preview)
 - `public/discord-symbol.svg`: Discord's official black symbol, used beside the server invitation; see [Discord's brand guidelines](https://discord.com/branding).
 
-Ivory `#fdf8f0` and charcoal `#131312` are sampled from the logo, not final brand specifications.
+Ivory `#fdf8f0` and charcoal `#131312` were sampled from the retired monogram and are not part of the approved monochrome identity; the site palette is unchanged until a site-wide decision. The three brand backgrounds are not used on the site yet.
 
 ## Vercel deployment
 Vercel project `intelligenza-umana-web` is connected to this repository. Framework preset Angular, build `npm run build`, output `dist/intelligenza-umana-web/browser`. Verify preview behavior before production publication.

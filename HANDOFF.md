@@ -33,3 +33,6 @@ Embedded the official Discord server widget (`discord.com/widget`, dark theme, 3
 
 ## 2026-11-28 — Discord panel layout
 The widget now sits in a panel with heading, short text and the invite button beside the iframe (single column below 760 px); the invite button moved out of the actions row. `DiscordWidget` now takes heading, body, button and title inputs. Build succeeds; the `app.css` budget warning dropped to 8.20 kB (was 8.39 kB). Checked with local screenshots at 1280 and 390 px, with the iframe replaced by a placeholder because discord.com is unreachable here; the real widget rendering is unverified.
+
+## 2026-11-28 — New brand identity
+Replaced the retired Logo 02 monogram with the approved emblem from the foundation `assets/brand/`: header and hero use `public/logo-light.svg`; added `favicon.svg`, regenerated favicon.ico, 16/32 px PNGs, Apple touch icon and an `og-image.png` (wordmark on white, 1200×630) from the canonical SVGs; removed `logo-intelligenza-umana.webp`. README, AGENTS and DOCUMENTATION_MAP updated. The brand backgrounds are not used (would be a redesign). Page palette unchanged. Build and local screenshots checked; the og:image URL points at `main` on raw.githubusercontent, so it resolves only after merge. Production deployment not verified.
