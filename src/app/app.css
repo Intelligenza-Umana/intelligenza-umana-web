@@ -41,6 +41,7 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em;line-height:1.15;fon
 .method dt{font-weight:650}
 .method dd{margin:0;color:#55534e;line-height:1.55}
 .method .text-link{text-decoration:underline}
+#founder,#manifesto{position:absolute}
 .about{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2rem;align-items:center}
 .about-photo{width:128px;height:auto;aspect-ratio:1;border-radius:50%}
 .about h2{margin-bottom:.9rem}
