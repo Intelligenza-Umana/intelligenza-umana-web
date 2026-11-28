@@ -2,5 +2,4 @@
   <circle cx="200" cy="200" r="150"/>
   <rect x="95" y="95" width="210" height="210"/>
   <path d="M200 20 A180 180 0 0 1 380 200" stroke-dasharray="2 6"/>
-  <path d="M200 175 L205 195 L225 200 L205 205 L200 225 L195 205 L175 200 L195 195 Z" fill="#131312" stroke="none"/>
 </svg>

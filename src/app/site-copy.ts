@@ -54,9 +54,9 @@ const en = {
   licenseDetails: 'Licensing details',
   navContribute: 'Contribute',
   navAbout: 'About',
-  openingTitle: 'Open-source tools and skills for backend engineering, security and data integrity.',
+  openingTitle: 'Open-source tools and skills for AI-assisted software development.',
   openingBody:
-    'Code written with AI assistance is read and understood by a person before it is merged. Each project states what has been verified.',
+    'Projects follow an engineering standard: a person has to understand AI-assisted code before it is merged. Each project’s README states what has been verified.',
   openingProjects: 'Browse projects',
   openingIssues: 'Find a first issue',
   openingStandard: 'Engineering standard',
@@ -66,9 +66,11 @@ const en = {
   colLicence: 'Licence',
   colUpdated: 'Updated',
   noLicence: 'No licence declared',
+  otherLicence: 'Other licence, see repository',
+  notLoaded: 'Not loaded',
   contributeHeading: 'Contribute',
   contributeSteps:
-    'Fork a project, make a change, open a pull request. Maintainers review it before merging.',
+    'Fork a project, make a change, open a pull request. A maintainer reviews it before merging.',
   issuesHeading: 'Open issues for beginners',
   methodHeading: 'Method',
   methodIntro:
@@ -100,7 +102,7 @@ const it: typeof en = {
     { title: 'Rivedi e verifica.', body: 'Comprendi il codice ed esegui controlli ripetibili.' },
     {
       title: 'Dichiara i limiti.',
-      body: 'Indica le incertezze e ciò che i test riescono a verificare.',
+      body: 'Indica le incertezze: i test non dimostrano la sicurezza assoluta.',
     },
   ],
   engineeringStandard: 'Leggi lo standard di ingegneria',
@@ -137,9 +139,9 @@ const it: typeof en = {
   licenseDetails: 'Dettagli sulle licenze',
   navContribute: 'Contribuisci',
   navAbout: 'Chi siamo',
-  openingTitle: 'Strumenti e skill open source per ingegneria backend, sicurezza e integrità dei dati.',
+  openingTitle: 'Strumenti e skill open source per lo sviluppo software assistito dall’IA.',
   openingBody:
-    'Il codice scritto con l’aiuto dell’IA viene letto e compreso da una persona prima di essere integrato. Ogni progetto indica che cosa è stato verificato.',
+    'I progetti seguono uno standard di ingegneria: una persona deve comprendere il codice assistito dall’IA prima che venga integrato. Il README di ogni progetto indica che cosa è stato verificato.',
   openingProjects: 'Vedi i progetti',
   openingIssues: 'Trova una prima issue',
   openingStandard: 'Standard di ingegneria',
@@ -149,9 +151,11 @@ const it: typeof en = {
   colLicence: 'Licenza',
   colUpdated: 'Aggiornato',
   noLicence: 'Nessuna licenza dichiarata',
+  otherLicence: 'Altra licenza, vedi il repository',
+  notLoaded: 'Non caricato',
   contributeHeading: 'Contribuisci',
   contributeSteps:
-    'Fai il fork di un progetto, modificalo e apri una pull request. I manutentori la esaminano prima di integrarla.',
+    'Fai il fork di un progetto, modificalo e apri una pull request. Un manutentore la esamina prima di integrarla.',
   issuesHeading: 'Issue aperte per principianti',
   methodHeading: 'Metodo',
   methodIntro:

@@ -68,4 +68,5 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.03em;line-height:1.15;fon
  .footer{display:grid;grid-template-columns:1fr;gap:.6rem}
  .footer-licensing{flex-direction:column;gap:.4rem}
 }
+@media(max-width:1199px){.hero-geometry{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}

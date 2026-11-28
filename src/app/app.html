@@ -65,6 +65,7 @@
       <p class="catalog-status">{{ t.projectsEmpty }}</p>
     }
     <div class="projects" [class.is-loading]="loading()" aria-live="polite">
+      @if (projects().length > 0) {
       <app-project-table
         [rows]="projects()"
         [language]="language()"
@@ -74,9 +75,12 @@
           licence: t.colLicence,
           updated: t.colUpdated,
           noLicence: t.noLicence,
+          otherLicence: t.otherLicence,
+          notLoaded: t.notLoaded,
           defaultDescription: t.projectDefaultDescription,
         }"
       />
+      }
     </div>
     @if (live()) {
       <p class="catalog-source">

@@ -16,6 +16,8 @@ export interface ProjectTableLabels {
   licence: string;
   updated: string;
   noLicence: string;
+  otherLicence: string;
+  notLoaded: string;
   defaultDescription: string;
 }
 
@@ -42,10 +44,10 @@ export interface ProjectTableLabels {
               {{ row.description || labels().defaultDescription }}
             </td>
             <td class="meta" [attr.data-label]="labels().licence">
-              {{ row.license || labels().noLicence }}
+              {{ row.license === 'NOASSERTION' ? labels().otherLicence : row.license || labels().noLicence }}
             </td>
             <td class="meta" [attr.data-label]="labels().updated">
-              {{ row.updatedAt ? (row.updatedAt | date: 'mediumDate' : undefined : language()) : '—' }}
+              {{ row.updatedAt ? (row.updatedAt | date: 'mediumDate' : undefined : language()) : labels().notLoaded }}
             </td>
           </tr>
         }
