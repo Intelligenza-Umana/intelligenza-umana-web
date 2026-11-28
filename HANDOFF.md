@@ -30,3 +30,6 @@ Production build of merge commit `56e8fff` failed because `app.css` reached 8.76
 
 ## 2026-11-28 — Discord widget
 Embedded the official Discord server widget (`discord.com/widget`, dark theme, 350×500, sandboxed, lazy) in the participation section via a standalone `DiscordWidget` component with a translated accessible title. `npm run build` succeeds; the `app.css` budget warning (8.39 kB vs 8.00 kB) was already present and `app.css` is unchanged. No tests exist; no browser verification, no deployment. The widget is third-party content: it loads from discord.com when scrolled near.
+
+## 2026-11-28 — Discord panel layout
+The widget now sits in a panel with heading, short text and the invite button beside the iframe (single column below 760 px); the invite button moved out of the actions row. `DiscordWidget` now takes heading, body, button and title inputs. Build succeeds; the `app.css` budget warning dropped to 8.20 kB (was 8.39 kB). Checked with local screenshots at 1280 and 390 px, with the iframe replaced by a placeholder because discord.com is unreachable here; the real widget rendering is unverified.

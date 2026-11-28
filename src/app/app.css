@@ -23,9 +23,6 @@ h1,h2,h3,p{margin-top:0}
 .actions{display:flex;align-items:center;flex-wrap:wrap;gap:1.4rem;margin-top:2rem}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:1.4rem;background:#131312;color:#fff;padding:1rem 1.25rem;text-decoration:none;font-weight:650}
 .button:hover{background:#44423d}
-.discord-button{gap:.7rem;background:#fdf8f0;color:#131312;border:1px solid #131312}
-.discord-button:hover{background:#ede7dc}
-.discord-button img{width:24px;height:18px;object-fit:contain}
 .text-link{font-weight:650;text-decoration:none}
 .hero-index{position:absolute;left:0;right:0;bottom:1.5rem;border-top:1px solid #d8d2c7;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;color:#66635d;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
 .section{padding-top:clamp(4.5rem,8vw,7rem);padding-bottom:clamp(4.5rem,8vw,7rem)}
