@@ -36,10 +36,7 @@ interface ProjectCard {
   name: string;
   url: string;
   description: string | null;
-  topics: string[];
   updatedAt?: string;
-  stars?: number;
-  language?: string | null;
   license: string | null;
 }
 
@@ -51,12 +48,10 @@ const knownProjects = [
     en: {
       description:
         'A local evidence ledger for AI-assisted learning, with deterministic rules that keep mastery assessments tied to evidence.',
-      topics: ['learning', 'AI assistance', 'MIT'],
     },
     it: {
       description:
         'Un registro locale delle evidenze per l’apprendimento assistito dall’IA, con regole deterministiche che legano la valutazione delle competenze alle evidenze raccolte.',
-      topics: ['apprendimento', 'assistenza IA', 'MIT'],
     },
   },
   {
@@ -66,12 +61,10 @@ const knownProjects = [
     en: {
       description:
         'A Spring Boot security review assistant. Its score is not a security certification.',
-      topics: ['security', 'Spring Boot', 'MIT'],
     },
     it: {
       description:
         'Un assistente per la revisione della sicurezza di applicazioni Spring Boot. Il punteggio ha valore indicativo.',
-      topics: ['sicurezza', 'Spring Boot', 'MIT'],
     },
   },
   {
@@ -80,13 +73,11 @@ const knownProjects = [
     url: 'https://github.com/Intelligenza-Umana/iu-project-lifecycle-skill',
     en: {
       description:
-        'A skill for preserving project decisions, context and handoffs across AI-assisted work.',
-      topics: ['developer tools', 'early version', 'MIT'],
+        'A skill for preserving project decisions, context and handoffs across AI-assisted work. Early version.',
     },
     it: {
       description:
-        'Una skill per conservare decisioni, contesto di progetto e passaggi di consegne durante il lavoro assistito dall’IA.',
-      topics: ['strumenti per sviluppatori', 'versione iniziale', 'MIT'],
+        'Una skill per conservare decisioni, contesto di progetto e passaggi di consegne durante il lavoro assistito dall’IA. Versione iniziale.',
     },
   },
   {
@@ -96,12 +87,10 @@ const knownProjects = [
     en: {
       description:
         'An early model-routing skill for coding agents. Native discovery and delegation remain unverified.',
-      topics: ['AI', 'developer tools', 'early version', 'MIT'],
     },
     it: {
       description:
         'Una skill in fase iniziale per indirizzare gli agenti di programmazione verso il modello adatto. Il rilevamento nativo e la delega richiedono ancora verifiche.',
-      topics: ['IA', 'strumenti per sviluppatori', 'versione iniziale', 'MIT'],
     },
   },
 ];
@@ -239,10 +228,7 @@ export class App implements OnInit {
             name: repository.name,
             url: repository.html_url,
             description: repository.description,
-            topics: repository.topics ?? [],
             updatedAt: repository.pushed_at,
-            stars: repository.stargazers_count,
-            language: repository.language,
             license: repository.license?.spdx_id ?? null,
           })),
       );

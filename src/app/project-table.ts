@@ -18,6 +18,8 @@ export interface ProjectTableLabels {
   noLicence: string;
   otherLicence: string;
   notLoaded: string;
+  caption: string;
+  newTab: string;
   defaultDescription: string;
 }
 
@@ -25,28 +27,28 @@ export interface ProjectTableLabels {
   selector: 'app-project-table',
   imports: [DatePipe],
   template: `
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">{{ labels().repository }}</th>
-          <th scope="col">{{ labels().description }}</th>
-          <th scope="col">{{ labels().licence }}</th>
-          <th scope="col">{{ labels().updated }}</th>
+    <table role="table" [attr.aria-label]="labels().caption">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader" scope="col">{{ labels().repository }}</th>
+          <th role="columnheader" scope="col">{{ labels().description }}</th>
+          <th role="columnheader" scope="col">{{ labels().licence }}</th>
+          <th role="columnheader" scope="col">{{ labels().updated }}</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody role="rowgroup">
         @for (row of rows(); track row.url) {
-          <tr>
-            <td class="name" [attr.data-label]="labels().repository">
-              <a [href]="row.url" target="_blank" rel="noopener noreferrer">{{ row.name }}</a>
+          <tr role="row">
+            <td role="cell" class="name" [attr.data-label]="labels().repository">
+              <a [href]="row.url" target="_blank" rel="noopener noreferrer">{{ row.name }}<span class="visually-hidden"> {{ labels().newTab }}</span></a>
             </td>
-            <td [attr.data-label]="labels().description">
+            <td role="cell" [attr.data-label]="labels().description">
               {{ row.description || labels().defaultDescription }}
             </td>
-            <td class="meta" [attr.data-label]="labels().licence">
+            <td role="cell" class="meta" [attr.data-label]="labels().licence">
               {{ row.license === 'NOASSERTION' ? labels().otherLicence : row.license || labels().noLicence }}
             </td>
-            <td class="meta" [attr.data-label]="labels().updated">
+            <td role="cell" class="meta" [attr.data-label]="labels().updated">
               {{ row.updatedAt ? (row.updatedAt | date: 'mediumDate' : undefined : language()) : labels().notLoaded }}
             </td>
           </tr>
@@ -61,6 +63,7 @@ export interface ProjectTableLabels {
       color: #55534e; padding: .7rem 1rem .7rem 0; border-bottom: 1px solid #c9c3b6; }
     td { padding: .9rem 1rem .9rem 0; border-bottom: 1px solid #e1dacb; vertical-align: top;
       line-height: 1.5; overflow-wrap: anywhere; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
     .name { font-weight: 650; }
     .name a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .25em; }
     .name a:focus-visible { outline: 3px solid #9a5b36; outline-offset: 4px; }
