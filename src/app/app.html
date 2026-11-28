@@ -167,14 +167,7 @@
     } @else if (contributionIssues().length === 0) {
       <p class="catalog-status" role="status">{{ t.opportunitiesEmpty }}</p>
     } @else {
-      <ul class="contribution-list">
-        @for (issue of contributionIssues(); track issue.id) {
-          <li>
-            <span class="card-top">{{ issue.repository }} #{{ issue.number }}</span>
-            <a [href]="issue.url">{{ issue.title }}</a>
-          </li>
-        }
-      </ul>
+      <app-contribution-list [issues]="contributionIssues()" />
       <p class="catalog-source">{{ t.opportunitiesSource }}</p>
     }
     <div class="actions">

@@ -3,6 +3,7 @@ import italian from '@angular/common/locales/it';
 import { Component, computed, DOCUMENT, effect, inject, OnInit, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { type Language, siteCopy } from './site-copy';
+import { ContributionList, type ContributionIssue } from './contribution-list';
 
 registerLocaleData(italian);
 
@@ -28,14 +29,6 @@ interface GitHubIssue {
   repository_url: string;
   pull_request?: unknown;
   assignees: unknown[];
-}
-
-interface ContributionIssue {
-  id: number;
-  number: number;
-  title: string;
-  url: string;
-  repository: string;
 }
 
 interface ProjectCard {
@@ -109,7 +102,7 @@ const knownProjects = [
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe],
+  imports: [DatePipe, ContributionList],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })

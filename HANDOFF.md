@@ -24,3 +24,6 @@ Vercel preview build completed successfully on the earlier UI revision, with a C
 
 ## 2026-11-28 — Contribution discovery (proposed)
 The branch `feat/live-contribution-opportunities` adds a bilingual contribution section, a hero shortcut, and a public GitHub search for up to 12 open, unassigned good first issues. Error, retry and empty states are explicit, with a direct search link always available. Existing branding and optional membership are preserved. No production deployment or local build/browser verification was performed in this session. Before merge, run npm run build and verify success, empty, rate-limit/error, retry, and both languages at desktop and mobile widths. The foundation registry status is unchanged because this is an unmerged proposal.
+
+## 2026-11-28 — Contribution list build fix
+Production build of merge commit `56e8fff` failed because `app.css` reached 8.76 kB against the 8.5 kB component-style budget. Extracted the issue list into a standalone Angular component with scoped styles; preserved the API, bilingual copy, responsive layout and focus styling. Angular budgets remain unchanged. Vercel preview build and browser verification are required before declaring the fix verified.
