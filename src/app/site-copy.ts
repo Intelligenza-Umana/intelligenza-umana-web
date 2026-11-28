@@ -78,7 +78,7 @@ const en = {
     'AI output is a starting point. A person has to understand it, and the checks have to be repeatable.',
   aboutHeading: 'About',
   aboutBody:
-    'Fabio Zagaria, an Italian junior developer, founded Intelligenza Umana. He is looking for a role in an IT company.',
+    'Fabio Zagaria, an Italian junior developer, founded Intelligenza Umana.',
   aboutLinkProfile: 'GitHub profile',
   aboutLinkPortfolio: 'Portfolio',
   aboutLinkMotivation: 'Why Intelligenza Umana exists',
@@ -165,7 +165,7 @@ const it: typeof en = {
     'Il risultato dell’IA è un punto di partenza. Una persona deve comprenderlo e i controlli devono essere ripetibili.',
   aboutHeading: 'Chi siamo',
   aboutBody:
-    'Intelligenza Umana è stata fondata da Fabio Zagaria, sviluppatore junior italiano. Cerca un ruolo in un’azienda IT.',
+    'Intelligenza Umana è stata fondata da Fabio Zagaria, sviluppatore junior italiano.',
   aboutLinkProfile: 'Profilo GitHub',
   aboutLinkPortfolio: 'Portfolio',
   aboutLinkMotivation: 'Perché esiste Intelligenza Umana',
