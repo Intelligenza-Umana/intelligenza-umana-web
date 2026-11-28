@@ -80,6 +80,7 @@ const en = {
   aboutBody:
     'Fabio Zagaria, an Italian junior developer, founded Intelligenza Umana. He is looking for a role in an IT company.',
   aboutLinkProfile: 'GitHub profile',
+  aboutLinkPortfolio: 'Portfolio',
   aboutLinkMotivation: 'Why Intelligenza Umana exists',
 };
 
@@ -166,6 +167,7 @@ const it: typeof en = {
   aboutBody:
     'Intelligenza Umana è stata fondata da Fabio Zagaria, sviluppatore junior italiano. Cerca un ruolo in un’azienda IT.',
   aboutLinkProfile: 'Profilo GitHub',
+  aboutLinkPortfolio: 'Portfolio',
   aboutLinkMotivation: 'Perché esiste Intelligenza Umana',
 };
 
