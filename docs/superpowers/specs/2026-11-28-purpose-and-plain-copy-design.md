@@ -1,4 +1,4 @@
-# Site purpose and plain copy — design
+# Site purpose, plain copy and visual direction — design
 
 ## Intent
 
@@ -16,7 +16,7 @@ The foundation defines this site as a technical portal (`website/README.md` in t
 
 - No new pages, router, dependency, backend or build tooling.
 - No skill/MCP catalog yet: its data source is not verified (possibly `iu-marketplace`). Proposed as a later step.
-- No palette, font or logo change. Ivory `#fdf8f0` and charcoal `#131312` stay until the palette is decided.
+- No new colours, fonts or logo. Ivory `#fdf8f0`, charcoal `#131312` and system fonts stay; the Calm theme is not used because the brand is monochrome and `AGENTS.md` forbids undecided colours/fonts.
 - No deployment, no change to the GitHub API behaviour or its explicit failure states.
 
 ## Anti-goals
@@ -42,6 +42,15 @@ The change fails if it replaces one set of slogans with another, hides the found
 Section order: header (logo, Projects, Contribute, Method, language) → opening (one sentence, two links) → Projects (live catalog, states unchanged) → Contribute (beginner issues, how review works, membership request, Discord invite button without the iframe widget) → Method (four short points, standard link) → Who is behind it (portrait, three lines, portfolio and motivation links, one sentence on the job search) → footer (licensing, security, contact).
 
 The manifesto section is merged into the opening and the method; the manifesto stays linked. `DiscordWidget` is replaced by a plain invite link; the component is removed if unused. Language selector, skip link, back-to-top, reduced-motion and focus styles are kept.
+
+## Visual direction (approved 2026-11-28)
+
+Direction A ("registry") with a touch of C in the opening. Mockups: https://claude.ai/artifact/ME4zGX5iU421L43BGwFgpf (private).
+
+- Projects and beginner issues are tables or ruled rows with monospace metadata (repository, licence, updated), not cards. Rows collapse to stacked records at phone width instead of scrolling sideways.
+- Hairline rules in charcoal separate sections; section titles are small monospace caps naming the content.
+- The opening keeps A's left-aligned sentence and links, with a restrained line drawing of a circle, a square and an open arc (the shapes the brand says the emblem stands for) behind it. It is decoration only, `aria-hidden`, and must not imitate the emblem. It needs the founder's approval as part of the identity before it ships to production.
+- No accent colour, no shadows, no rounded cards; buttons are plain links or one filled charcoal button.
 
 ## Constraints
 
