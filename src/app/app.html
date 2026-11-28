@@ -6,10 +6,10 @@
     <span>Intelligenza<br />Umana</span>
   </a>
   <nav [attr.aria-label]="t.navigation">
-    <a href="#manifesto">{{ t.navManifesto }}</a>
-    <a href="#approach">{{ t.navMethod }}</a>
     <a href="#projects">{{ t.navProjects }}</a>
-    <a href="#founder">{{ t.navFounder }}</a>
+    <a href="#contribute">{{ t.navContribute }}</a>
+    <a href="#approach">{{ t.navMethod }}</a>
+    <a href="#about">{{ t.navAbout }}</a>
   </nav>
   <div class="language-selector" role="group" [attr.aria-label]="t.languageSelector">
     <button
@@ -34,70 +34,22 @@
 </header>
 <main id="main">
   <section class="hero wrap" id="top" aria-labelledby="hero-title">
+    <span id="manifesto"></span>
+    <img class="hero-geometry" src="hero-geometry.svg" width="400" height="400" alt="" />
     <div class="hero-copy">
-      <p class="eyebrow">{{ t.heroLabel }}</p>
-      <h1 id="hero-title">
-        {{ t.heroTitle }}<br /><span>{{ t.heroSubtitle }}</span>
-      </h1>
-      <p class="intro">{{ t.intro }}</p>
+      <h1 id="hero-title">{{ t.openingTitle }}</h1>
+      <p class="intro">{{ t.openingBody }}</p>
       <div class="actions">
-        <a class="button" href="#manifesto">{{ t.why }} <span aria-hidden="true">&rarr;</span></a>
-        <a class="text-link" href="https://github.com/Intelligenza-Umana/intelligenza-umana"
-          >{{ t.foundation }} &rarr;</a
-        >
-        <a class="text-link" href="#opportunities">{{ t.startContributing }} &rarr;</a>
-      </div>
-    </div>
-    <div class="hero-mark" aria-hidden="true">
-      <img src="logo-light.svg" width="256" height="256" alt="" />
-    </div>
-    <div class="hero-index">
-      <span>{{ t.heroIndex }}</span><span>{{ t.heroTopics }}</span>
-    </div>
-  </section>
-  <section id="manifesto" class="manifesto section">
-    <div class="wrap manifesto-grid">
-      <div>
-        <p class="eyebrow">{{ t.manifestoLabel }}</p>
-        <h2>{{ t.manifestoTitle }}</h2>
-      </div>
-      <div class="manifesto-copy">
-        <p class="statement">{{ t.manifestoStatement }}</p>
-        <p>{{ t.manifestoBody }}</p>
-        <a
-          [href]="'https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/' + t.manifestoFile"
-          >{{ t.manifestoLink }} <span aria-hidden="true">&rarr;</span></a
-        >
+        <a class="button" href="#projects">{{ t.openingProjects }}</a>
+        <a class="text-link" href="#opportunities">{{ t.openingIssues }}</a>
+        <a class="text-link" href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/docs/ENGINEERING_STANDARD.md">{{ t.openingStandard }}</a>
       </div>
     </div>
   </section>
-  <section id="approach" class="approach">
-    <div class="wrap approach-inner">
-      <div>
-        <p class="eyebrow">{{ t.methodLabel }}</p>
-        <h2>{{ t.methodTitle }}<br />{{ t.methodSubtitle }}</h2>
-      </div>
-      <div>
-        <p class="approach-lead">{{ t.methodLead }}</p>
-        <ol>
-          @for (step of t.methodSteps; track $index) {
-            <li>
-              <strong>{{ step.title }}</strong> {{ step.body }}
-            </li>
-          }
-        </ol>
-        <a
-          href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/docs/ENGINEERING_STANDARD.md"
-          >{{ t.engineeringStandard }} &rarr;</a
-        >
-      </div>
-    </div>
-  </section>
-  <section id="projects" class="section wrap projects-section">
+  <section id="projects" class="section wrap projects-section" aria-labelledby="projects-title">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">{{ t.projectsLabel }}</p>
-        <h2>{{ t.projectsTitle }}</h2>
+        <h2 id="projects-title">{{ t.projectsHeading }}</h2>
       </div>
       <p>{{ t.projectsIntro }}</p>
     </div>
@@ -114,32 +66,23 @@
       <p class="catalog-status">{{ t.projectsEmpty }}</p>
     }
     <div class="projects" [class.is-loading]="loading()" aria-live="polite">
-      @for (project of projects(); track project.url; let i = $index) {
-        <article>
-          <div class="card-top">
-            <span>{{ (i + 1).toString().padStart(2, '0') }} / {{ t.organizationProject }}</span
-            ><span>{{ project.language || t.openSource }}</span>
-          </div>
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.description || t.projectDefaultDescription }}</p>
-          @if (project.topics.length > 0) {
-            <ul class="topics" [attr.aria-label]="t.repositoryTopics">
-              @for (topic of project.topics; track topic) {
-                <li>{{ topic }}</li>
-              }
-            </ul>
-          }
-          @if (project.updatedAt) {
-            <p class="updated">
-              {{ t.updated }}
-              {{ project.updatedAt | date: 'mediumDate' : undefined : language() }} ·
-              {{ project.stars }} {{ project.stars === 1 ? t.star : t.stars }}
-            </p>
-          }
-          <a [href]="project.url" target="_blank" rel="noopener noreferrer"
-            >{{ t.repository }} <span aria-hidden="true">&rarr;</span></a
-          >
-        </article>
+      @if (projects().length > 0) {
+      <app-project-table
+        [rows]="projects()"
+        [language]="language()"
+        [labels]="{
+          repository: t.colRepository,
+          description: t.colDescription,
+          licence: t.colLicence,
+          updated: t.colUpdated,
+          noLicence: t.noLicence,
+          caption: t.projectsHeading,
+          newTab: t.newTab,
+          otherLicence: t.otherLicence,
+          notLoaded: t.notLoaded,
+          defaultDescription: t.projectDefaultDescription,
+        }"
+      />
       }
     </div>
     @if (live()) {
@@ -149,89 +92,50 @@
       </p>
     }
   </section>
-  <section id="opportunities" class="section wrap" aria-labelledby="opportunities-title">
+  <section id="contribute" class="section wrap contribute" aria-labelledby="contribute-title">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">{{ t.startContributing }}</p>
-        <h2 id="opportunities-title">{{ t.opportunitiesTitle }}</h2>
+        <h2 id="contribute-title">{{ t.contributeHeading }}</h2>
       </div>
-      <p>{{ t.opportunitiesIntro }}</p>
+      <p>{{ t.contributeSteps }}</p>
     </div>
-    @if (contributionsLoading()) {
-      <p class="catalog-status" role="status">{{ t.opportunitiesLoading }}</p>
-    } @else if (contributionsError()) {
-      <div class="catalog-notice" role="status">
-        <p>{{ t.opportunitiesError }}</p>
-        <button type="button" (click)="loadContributions()">{{ t.retry }}</button>
-      </div>
-    } @else if (contributionIssues().length === 0) {
-      <p class="catalog-status" role="status">{{ t.opportunitiesEmpty }}</p>
-    } @else {
-      <app-contribution-list [issues]="contributionIssues()" />
-      <p class="catalog-source">{{ t.opportunitiesSource }}</p>
-    }
+    <div id="opportunities">
+      <h3>{{ t.issuesHeading }}</h3>
+      <p class="issues-intro">{{ t.opportunitiesIntro }}</p>
+      @if (contributionsLoading()) {
+        <p class="catalog-status" role="status">{{ t.opportunitiesLoading }}</p>
+      } @else if (contributionsError()) {
+        <div class="catalog-notice" role="status">
+          <p>{{ t.opportunitiesError }}</p>
+          <button type="button" (click)="loadContributions()">{{ t.retry }}</button>
+        </div>
+      } @else if (contributionIssues().length === 0) {
+        <p class="catalog-status" role="status">{{ t.opportunitiesEmpty }}</p>
+      } @else {
+        <app-contribution-list [issues]="contributionIssues()" />
+        <p class="catalog-source">{{ t.opportunitiesSource }}</p>
+      }
+      <p><a class="text-link" [href]="contributionSearchUrl">{{ t.opportunitiesBrowse }}</a></p>
+    </div>
     <div class="actions">
-      <a class="button" [href]="contributionSearchUrl">{{ t.opportunitiesBrowse }} &rarr;</a>
-    </div>
-  </section>
-  <section id="founder" class="founder">
-    <div class="wrap founder-inner">
-      <img
-        class="founder-photo"
-        src="fabio-zagaria.webp"
-        width="640"
-        height="640"
-        [alt]="t.founderPortrait"
-      />
-      <div>
-        <p class="eyebrow">{{ t.founderLabel }}</p>
-        <h2>{{ t.founderTitle }}<br />{{ t.founderSubtitle }}</h2>
-        <p>{{ t.founderBio }}</p>
-        <p>{{ t.founderCurrent }}</p>
-        <a href="https://github.com/fabiozagaria"
-          >{{ t.founderWork }} <span aria-hidden="true">&rarr;</span></a
-        >
-      </div>
-      <figure class="motivation">
-        <blockquote>
-          @for (paragraph of t.motivation; track $index) {
-            <p>{{ paragraph }}</p>
-          }
-        </blockquote>
-        <figcaption>
-          Fabio Zagaria,
-          <a
-            [href]="
-              'https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/docs/' +
-              t.motivationFile
-            "
-            >{{ t.motivationLink }}</a
-          >
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-  <section class="section wrap contribute" id="contribute">
-    <p class="eyebrow">{{ t.contributeLabel }}</p>
-    <h2>{{ t.contributeTitle }}<br />{{ t.contributeSubtitle }}</h2>
-    <p>{{ t.contributeBody }}</p>
-    <p>{{ t.membershipNote }}</p>
-    <div class="actions">
-      <a class="button" href="https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md">{{ t.joinCommunity }} <span aria-hidden="true">&rarr;</span></a>
       <a
-        class="text-link"
-        href="https://github.com/Intelligenza-Umana/.github/blob/main/CONTRIBUTING.md"
-        >{{ t.contributeLink }} &rarr;</a
-      ><a class="text-link" href="#opportunities">{{ t.startContributing }}</a
-      ><a class="text-link" href="https://github.com/Intelligenza-Umana/iu-marketplace/issues/2">{{ t.marketplaceIssue }}</a
-      ><a class="text-link" href="mailto:intelligenzaumana.lab@gmail.com">{{ t.contact }}</a>
+        class="button"
+        href="https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md"
+        >{{ t.joinCommunity }}</a
+      >
+      <a class="text-link" href="https://discord.gg/Zt85ZYEXAA" target="_blank" rel="noopener noreferrer">
+        <img class="discord-mark" src="discord-symbol.svg" width="20" height="15" alt="" />
+        {{ t.discordCommunity }}<span class="visually-hidden"> {{ t.newTab }}</span></a
+      >
+      <a class="text-link" href="https://github.com/Intelligenza-Umana/.github/blob/main/CONTRIBUTING.md">{{
+        t.contributeLink
+      }}</a>
+      <a class="text-link" href="https://github.com/Intelligenza-Umana/iu-marketplace/issues/2">{{
+        t.marketplaceIssue
+      }}</a>
+      <a class="text-link" href="mailto:intelligenzaumana.lab@gmail.com">{{ t.contact }}</a>
     </div>
-    <app-discord-widget
-      [heading]="t.discordPanelTitle"
-      [body]="t.discordPanelBody"
-      [button]="t.discordCommunity"
-      [title]="t.discordWidgetTitle"
-    />
+    <p class="membership">{{ t.membershipNote }}</p>
     <p class="security">
       {{ t.securityIntro }}
       <a href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/SECURITY.md">{{
@@ -239,10 +143,41 @@
       }}</a>.
     </p>
   </section>
+  <section id="approach" class="section wrap method" aria-labelledby="approach-title">
+    <div class="section-heading">
+      <div>
+        <h2 id="approach-title">{{ t.methodHeading }}</h2>
+      </div>
+      <p>{{ t.methodIntro }}</p>
+    </div>
+    <dl>
+      @for (step of t.methodSteps; track $index) {
+        <dt>{{ step.title }}</dt>
+        <dd>{{ step.body }}</dd>
+      }
+    </dl>
+    <a class="text-link" href="https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/docs/ENGINEERING_STANDARD.md">{{ t.engineeringStandard }}</a>
+  </section>
+  <section id="about" class="section wrap about" aria-labelledby="about-title">
+    <span id="founder"></span>
+    <img class="about-photo" src="fabio-zagaria.webp" width="640" height="640" [alt]="t.founderPortrait" />
+    <div>
+      <h2 id="about-title">{{ t.aboutHeading }}</h2>
+      <p>{{ t.aboutBody }}</p>
+      <p class="about-links">
+        <a href="https://github.com/fabiozagaria">{{ t.aboutLinkProfile }}</a>
+        <a href="https://fabio-zagaria-portfolio.vercel.app/">{{ t.aboutLinkPortfolio }}</a>
+        <a
+          [href]="'https://github.com/Intelligenza-Umana/intelligenza-umana/blob/main/docs/' + t.motivationFile"
+          >{{ t.aboutLinkMotivation }}</a
+        >
+      </p>
+    </div>
+  </section>
 </main>
 <footer class="wrap footer">
-  <span>Intelligenza Umana</span><span>{{ t.heroTitle }} {{ t.heroSubtitle }}</span
-  ><a href="https://github.com/Intelligenza-Umana">{{ t.githubOrganization }} &rarr;</a>
+  <span>Intelligenza Umana</span
+  ><a href="https://github.com/Intelligenza-Umana">{{ t.githubOrganization }}</a>
   <div class="footer-licensing">
     <span>© 2026 Intelligenza Umana</span>
     <span>{{ t.licenseSoftware }}</span>

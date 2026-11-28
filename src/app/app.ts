@@ -1,10 +1,10 @@
-import { DatePipe, registerLocaleData } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import italian from '@angular/common/locales/it';
 import { Component, computed, DOCUMENT, effect, inject, OnInit, signal } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { type Language, siteCopy } from './site-copy';
 import { ContributionList, type ContributionIssue } from './contribution-list';
-import { DiscordWidget } from './discord-widget';
+import { ProjectTable } from './project-table';
 
 registerLocaleData(italian);
 
@@ -36,74 +36,134 @@ interface ProjectCard {
   name: string;
   url: string;
   description: string | null;
-  topics: string[];
   updatedAt?: string;
-  stars?: number;
-  language?: string | null;
+  license: string | null;
 }
 
+// Snapshot of the public catalog on 2026-11-28. Shown only when GitHub cannot be reached.
 const knownProjects = [
   {
-    name: 'Learning Ledger',
-    url: 'https://github.com/Intelligenza-Umana/iu-learning-ledger',
+    name: 'iu-agent-assurance',
+    url: 'https://github.com/Intelligenza-Umana/iu-agent-assurance',
+    license: 'MIT',
     en: {
       description:
-        'A local evidence ledger for AI-assisted learning, with deterministic rules that keep mastery assessments tied to evidence.',
-      topics: ['learning', 'AI assistance', 'MIT'],
+        'Community-driven open-source toolkit for reproducible AI agent verification, behavioral testing and evidence-based assurance',
     },
     it: {
       description:
-        'Un registro locale delle evidenze per l’apprendimento assistito dall’IA, con regole deterministiche che legano la valutazione delle competenze alle evidenze raccolte.',
-      topics: ['apprendimento', 'assistenza IA', 'MIT'],
+        'Toolkit open source della community per la verifica riproducibile di agenti IA, i test comportamentali e la garanzia basata su evidenze.',
     },
   },
   {
-    name: 'Spring Security Advisor',
-    url: 'https://github.com/Intelligenza-Umana/iu-spring-security-advisor',
-    en: {
-      description:
-        'A Spring Boot security review assistant. Its score is not a security certification.',
-      topics: ['security', 'Spring Boot', 'MIT'],
-    },
-    it: {
-      description:
-        'Un assistente per la revisione della sicurezza di applicazioni Spring Boot. Il punteggio ha valore indicativo.',
-      topics: ['sicurezza', 'Spring Boot', 'MIT'],
-    },
-  },
-  {
-    name: 'Project Lifecycle Skill',
+    name: 'iu-project-lifecycle-skill',
     url: 'https://github.com/Intelligenza-Umana/iu-project-lifecycle-skill',
+    license: 'MIT',
     en: {
       description:
-        'A skill for preserving project decisions, context and handoffs across AI-assisted work.',
-      topics: ['developer tools', 'early version', 'MIT'],
+        'Skill for Codex and Claude Code that helps agents document decisions, audit project context, and prepare handoffs so work can resume across sessions.',
     },
     it: {
       description:
-        'Una skill per conservare decisioni, contesto di progetto e passaggi di consegne durante il lavoro assistito dall’IA.',
-      topics: ['strumenti per sviluppatori', 'versione iniziale', 'MIT'],
+        'Skill per Codex e Claude Code che aiuta gli agenti a documentare le decisioni, verificare il contesto del progetto e preparare i passaggi di consegne, così il lavoro può riprendere tra una sessione e l’altra.',
     },
   },
   {
-    name: 'Model Router',
-    url: 'https://github.com/Intelligenza-Umana/iu-model-router',
+    name: 'iu-skill-validator',
+    url: 'https://github.com/Intelligenza-Umana/iu-skill-validator',
+    license: 'MIT',
     en: {
       description:
-        'An early model-routing skill for coding agents. Native discovery and delegation remain unverified.',
-      topics: ['AI', 'developer tools', 'early version', 'MIT'],
+        'An open-source pre-release validation tool for AI agent skills, separating static package checks from runtime verification.',
     },
     it: {
       description:
-        'Una skill in fase iniziale per indirizzare gli agenti di programmazione verso il modello adatto. Il rilevamento nativo e la delega richiedono ancora verifiche.',
-      topics: ['IA', 'strumenti per sviluppatori', 'versione iniziale', 'MIT'],
+        'Strumento open source di validazione pre-rilascio per skill di agenti IA, che separa i controlli statici del pacchetto dalla verifica a runtime.',
+    },
+  },
+  {
+    name: 'intelligenza-umana',
+    url: 'https://github.com/Intelligenza-Umana/intelligenza-umana',
+    license: 'MIT',
+    en: {
+      description:
+        'Foundation repository for Intelligenza Umana, with its manifesto, governance, engineering standards, contribution guidelines, and official project registry.',
+    },
+    it: {
+      description:
+        'Repository della fondazione di Intelligenza Umana, con manifesto, governance, standard di ingegneria, linee guida per i contributi e registro ufficiale dei progetti.',
+    },
+  },
+  {
+    name: 'iu-marketplace',
+    url: 'https://github.com/Intelligenza-Umana/iu-marketplace',
+    license: 'MIT',
+    en: {
+      description:
+        'Claude Code marketplace for Intelligenza Umana plugins: Spring security audit, evidence-based learning, model routing and project lifecycle',
+    },
+    it: {
+      description:
+        'Marketplace Claude Code per i plugin di Intelligenza Umana: audit di sicurezza Spring, apprendimento basato su evidenze, instradamento dei modelli e ciclo di vita dei progetti.',
+    },
+  },
+  {
+    name: 'intelligenza-umana-web',
+    url: 'https://github.com/Intelligenza-Umana/intelligenza-umana-web',
+    license: null,
+    en: {
+      description:
+        'Bilingual Angular website for Intelligenza Umana. It presents the initiative and loads its public project listings from the GitHub API.',
+    },
+    it: {
+      description:
+        'Sito Angular bilingue di Intelligenza Umana. Presenta l’iniziativa e carica l’elenco dei progetti pubblici dall’API di GitHub.',
+    },
+  },
+  {
+    name: 'iu-spring-security-advisor',
+    url: 'https://github.com/Intelligenza-Umana/iu-spring-security-advisor',
+    license: 'MIT',
+    en: {
+      description:
+        'Claude Code plugin for read-only Spring Boot security audits. It maps security configuration and combines Python scanner findings with a checklist to compute a score.',
+    },
+    it: {
+      description:
+        'Plugin Claude Code per audit di sicurezza di sola lettura su Spring Boot. Mappa la configurazione di sicurezza e combina i risultati dello scanner Python con una checklist per calcolare un punteggio.',
+    },
+  },
+  {
+    name: 'iu-learning-ledger',
+    url: 'https://github.com/Intelligenza-Umana/iu-learning-ledger',
+    license: 'MIT',
+    en: {
+      description:
+        'Claude Code plugin for quizzes and coding practice. A local Python ledger tracks mastery from demonstrated performance and schedules spaced reviews.',
+    },
+    it: {
+      description:
+        'Plugin Claude Code per quiz ed esercizi di programmazione. Un registro Python locale traccia la padronanza in base alle prestazioni dimostrate e pianifica ripassi distanziati.',
+    },
+  },
+  {
+    name: 'iu-model-router',
+    url: 'https://github.com/Intelligenza-Umana/iu-model-router',
+    license: 'MIT',
+    en: {
+      description:
+        'Experimental skill for Codex and Claude Code that recommends models for delegated coding tasks based on complexity, project context, risk, and cost.',
+    },
+    it: {
+      description:
+        'Skill sperimentale per Codex e Claude Code che consiglia i modelli per i compiti di programmazione delegati in base a complessità, contesto del progetto, rischio e costo.',
     },
   },
 ];
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, ContributionList, DiscordWidget],
+  imports: [ContributionList, ProjectTable],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
@@ -120,9 +180,10 @@ export class App implements OnInit {
     const language = this.language();
     return (
       this.githubProjects() ??
-      knownProjects.map(({ name, url, ...copy }) => ({
+      knownProjects.map(({ name, url, license, ...copy }) => ({
         name,
         url,
+        license,
         ...copy[language],
       }))
     );
@@ -130,7 +191,8 @@ export class App implements OnInit {
   readonly contributionIssues = signal<ContributionIssue[]>([]);
   readonly contributionsLoading = signal(true);
   readonly contributionsError = signal(false);
-  readonly contributionSearchUrl = 'https://github.com/search?q=org%3AIntelligenza-Umana+is%3Apublic+is%3Aissue+is%3Aopen+no%3Aassignee+label%3A%22good+first+issue%22&type=issues';
+  readonly contributionSearchUrl =
+    'https://github.com/search?q=org%3AIntelligenza-Umana+is%3Apublic+is%3Aissue+is%3Aopen+no%3Aassignee+label%3A%22good+first+issue%22&type=issues';
 
   readonly loading = signal(true);
   readonly live = computed(() => this.githubProjects() !== null);
@@ -146,10 +208,17 @@ export class App implements OnInit {
       if (origin) {
         this.meta.updateTag({ property: 'og:title', content: copy.title });
         this.meta.updateTag({ property: 'og:description', content: copy.description });
-        this.meta.updateTag({ property: 'og:locale', content: this.language() === 'it' ? 'it_IT' : 'en_US' });
+        this.meta.updateTag({
+          property: 'og:locale',
+          content: this.language() === 'it' ? 'it_IT' : 'en_US',
+        });
         this.meta.updateTag({ property: 'og:type', content: 'website' });
         this.meta.updateTag({ property: 'og:url', content: origin + '/' });
-        this.meta.updateTag({ property: 'og:image', content: 'https://raw.githubusercontent.com/Intelligenza-Umana/intelligenza-umana-web/main/public/og-image.png' });
+        this.meta.updateTag({
+          property: 'og:image',
+          content:
+            'https://raw.githubusercontent.com/Intelligenza-Umana/intelligenza-umana-web/main/public/og-image.png',
+        });
         this.meta.updateTag({ property: 'og:image:alt', content: 'Intelligenza Umana logo' });
         this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
         this.meta.updateTag({ name: 'twitter:title', content: copy.title });
@@ -188,13 +257,19 @@ export class App implements OnInit {
     this.contributionIssues.set([]);
 
     try {
-      const query = 'org:Intelligenza-Umana is:public is:issue is:open no:assignee label:"good first issue"';
+      const query =
+        'org:Intelligenza-Umana is:public is:issue is:open no:assignee label:"good first issue"';
       const response = await fetch(
-        'https://api.github.com/search/issues?q=' + encodeURIComponent(query) + '&sort=updated&order=desc&per_page=12',
+        'https://api.github.com/search/issues?q=' +
+          encodeURIComponent(query) +
+          '&sort=updated&order=desc&per_page=12',
         { headers: { Accept: 'application/vnd.github+json' } },
       );
       if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
-      const result = (await response.json()) as { items: GitHubIssue[]; incomplete_results: boolean };
+      const result = (await response.json()) as {
+        items: GitHubIssue[];
+        incomplete_results: boolean;
+      };
       if (result.incomplete_results) throw new Error('Incomplete GitHub search');
       this.contributionIssues.set(
         result.items
@@ -233,10 +308,8 @@ export class App implements OnInit {
             name: repository.name,
             url: repository.html_url,
             description: repository.description,
-            topics: repository.topics ?? [],
             updatedAt: repository.pushed_at,
-            stars: repository.stargazers_count,
-            language: repository.language,
+            license: repository.license?.spdx_id ?? null,
           })),
       );
     } catch {
