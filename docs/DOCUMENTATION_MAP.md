@@ -8,5 +8,6 @@
 | `README.md` | Scopo, sviluppo, asset di brand, deploy | Questo file | Cambiano comandi, asset o deploy |
 | `docs/DOCUMENTATION_MAP.md` | Mappa dei documenti | Questo file | Cambia la struttura documentale |
 | `docs/DEFINITION_OF_DONE.md` | Criteri di chiusura | Questo file | Cambiano i criteri |
+| `docs/superpowers/specs/`, `docs/superpowers/plans/` | Design documents and implementation plans for site changes | Those files | A design or plan changes |
 | `src/`, `public/`, `angular.json`, `package.json` | Codice e asset del sito | Il codice stesso | Modifiche al sito |
 Fuori da questa repository (madre `intelligenza-umana`): identità e logo in `assets/brand/` e linee guida in `brand/`, registry in `docs/PROJECT_REGISTRY.md`, site requirements in `website/`, and engineering principles in `docs/ENGINEERING_STANDARD.md`.
