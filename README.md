@@ -8,7 +8,7 @@ The header switches the site between English and Italian. English is the default
 
 The contribution section fetches up to 12 public, open, unassigned issues labeled `good first issue` through GitHub’s public search API. Loading, empty and error states are explicit; the direct GitHub search remains available if the API is unavailable. Issue titles come from GitHub and remain in their original language. No credentials or additional services are required.
 
-The participation section links to the [membership request](https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md) and the [Intelligenza Umana Discord server](https://discord.gg/Zt85ZYEXAA) with Discord's unmodified official symbol.
+The participation section links to the [membership request](https://github.com/Intelligenza-Umana/intelligenza-umana/issues/new?template=membership_request.md) and the [Intelligenza Umana Discord server](https://discord.gg/Zt85ZYEXAA) with Discord's unmodified official symbol. Below it, the official Discord server widget is embedded in an `<iframe>` (`src/app/discord-widget.ts`; sandboxed, lazy-loaded, third-party content from discord.com).
 
 ## Development
 ```bash

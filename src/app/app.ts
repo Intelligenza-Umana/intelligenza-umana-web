@@ -4,6 +4,7 @@ import { Component, computed, DOCUMENT, effect, inject, OnInit, signal } from '@
 import { Meta, Title } from '@angular/platform-browser';
 import { type Language, siteCopy } from './site-copy';
 import { ContributionList, type ContributionIssue } from './contribution-list';
+import { DiscordWidget } from './discord-widget';
 
 registerLocaleData(italian);
 
@@ -102,7 +103,7 @@ const knownProjects = [
 
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, ContributionList],
+  imports: [DatePipe, ContributionList, DiscordWidget],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
