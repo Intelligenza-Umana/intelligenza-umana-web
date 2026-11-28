@@ -113,6 +113,34 @@ const en = {
   licenseContent: 'Original editorial content:',
   licenseBrand: 'Logo and visual identity: all rights reserved.',
   licenseDetails: 'Licensing details',
+  navContribute: 'Contribute',
+  navAbout: 'About',
+  openingTitle: 'Open-source tools and skills for backend engineering, security and data integrity.',
+  openingBody:
+    'Code written with AI assistance is read and understood by a person before it is merged. Each project states what has been verified.',
+  openingProjects: 'Browse projects',
+  openingIssues: 'Find a first issue',
+  openingStandard: 'Engineering standard',
+  projectsHeading: 'Projects',
+  colRepository: 'Repository',
+  colDescription: 'Description',
+  colLicence: 'Licence',
+  colUpdated: 'Updated',
+  noLicence: 'No licence declared',
+  contributeHeading: 'Contribute',
+  contributeSteps:
+    'Fork a project, make a change, open a pull request. Maintainers review it before merging. Organization membership is optional.',
+  issuesHeading: 'Open issues for beginners',
+  colIssue: 'Issue',
+  colTitle: 'Title',
+  methodHeading: 'Method',
+  methodIntro:
+    'AI output is a starting point. A person has to understand it, and the checks have to be repeatable.',
+  aboutHeading: 'About',
+  aboutBody:
+    'Fabio Zagaria, an Italian junior developer, founded Intelligenza Umana. He is looking for a role in an IT company.',
+  aboutLinkProfile: 'GitHub profile',
+  aboutLinkMotivation: 'Why Intelligenza Umana exists',
 };
 
 const it: typeof en = {
@@ -231,6 +259,34 @@ const it: typeof en = {
   licenseContent: 'Contenuti editoriali originali:',
   licenseBrand: 'Logo e identità visiva: tutti i diritti riservati.',
   licenseDetails: 'Dettagli sulle licenze',
+  navContribute: 'Contribuisci',
+  navAbout: 'Chi siamo',
+  openingTitle: 'Strumenti e skill open source per ingegneria backend, sicurezza e integrità dei dati.',
+  openingBody:
+    'Il codice scritto con l’aiuto dell’IA viene letto e compreso da una persona prima di essere integrato. Ogni progetto indica che cosa è stato verificato.',
+  openingProjects: 'Vedi i progetti',
+  openingIssues: 'Trova una prima issue',
+  openingStandard: 'Standard di ingegneria',
+  projectsHeading: 'Progetti',
+  colRepository: 'Repository',
+  colDescription: 'Descrizione',
+  colLicence: 'Licenza',
+  colUpdated: 'Aggiornato',
+  noLicence: 'Nessuna licenza dichiarata',
+  contributeHeading: 'Contribuisci',
+  contributeSteps:
+    'Fai il fork di un progetto, modificalo e apri una pull request. I manutentori la esaminano prima di integrarla. L’adesione all’organizzazione è facoltativa.',
+  issuesHeading: 'Issue aperte per principianti',
+  colIssue: 'Issue',
+  colTitle: 'Titolo',
+  methodHeading: 'Metodo',
+  methodIntro:
+    'Il risultato dell’IA è un punto di partenza. Una persona deve comprenderlo e i controlli devono essere ripetibili.',
+  aboutHeading: 'Chi siamo',
+  aboutBody:
+    'Intelligenza Umana è stata fondata da Fabio Zagaria, sviluppatore junior italiano. Cerca un ruolo in un’azienda IT.',
+  aboutLinkProfile: 'Profilo GitHub',
+  aboutLinkMotivation: 'Perché esiste Intelligenza Umana',
 };
 
 export const siteCopy = { en, it };
