@@ -20,6 +20,24 @@ interface GitHubRepository {
   license: { spdx_id: string } | null;
 }
 
+interface GitHubIssue {
+  id: number;
+  number: number;
+  title: string;
+  html_url: string;
+  repository_url: string;
+  pull_request?: unknown;
+  assignees: unknown[];
+}
+
+interface ContributionIssue {
+  id: number;
+  number: number;
+  title: string;
+  url: string;
+  repository: string;
+}
+
 interface ProjectCard {
   name: string;
   url: string;
@@ -115,6 +133,11 @@ export class App implements OnInit {
       }))
     );
   });
+  readonly contributionIssues = signal<ContributionIssue[]>([]);
+  readonly contributionsLoading = signal(true);
+  readonly contributionsError = signal(false);
+  readonly contributionSearchUrl = 'https://github.com/search?q=org%3AIntelligenza-Umana+is%3Apublic+is%3Aissue+is%3Aopen+no%3Aassignee+label%3A%22good+first+issue%22&type=issues';
+
   readonly loading = signal(true);
   readonly live = computed(() => this.githubProjects() !== null);
   readonly loadError = signal(false);
@@ -143,6 +166,7 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     void this.loadProjects();
+    void this.loadContributions();
   }
 
   setLanguage(language: Language): void {
@@ -161,6 +185,38 @@ export class App implements OnInit {
         : 'en';
     } catch {
       return 'en';
+    }
+  }
+
+  async loadContributions(): Promise<void> {
+    this.contributionsLoading.set(true);
+    this.contributionsError.set(false);
+    this.contributionIssues.set([]);
+
+    try {
+      const query = 'org:Intelligenza-Umana is:public is:issue is:open no:assignee label:"good first issue"';
+      const response = await fetch(
+        'https://api.github.com/search/issues?q=' + encodeURIComponent(query) + '&sort=updated&order=desc&per_page=12',
+        { headers: { Accept: 'application/vnd.github+json' } },
+      );
+      if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
+      const result = (await response.json()) as { items: GitHubIssue[]; incomplete_results: boolean };
+      if (result.incomplete_results) throw new Error('Incomplete GitHub search');
+      this.contributionIssues.set(
+        result.items
+          .filter((issue) => !issue.pull_request && issue.assignees.length === 0)
+          .map((issue) => ({
+            id: issue.id,
+            number: issue.number,
+            title: issue.title,
+            url: issue.html_url,
+            repository: issue.repository_url.split('/').pop() ?? '',
+          })),
+      );
+    } catch {
+      this.contributionsError.set(true);
+    } finally {
+      this.contributionsLoading.set(false);
     }
   }
 
